@@ -75,9 +75,28 @@ module.exports = (_env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
-          exclude: /(node_modules|bower_components)/,
+          test: /\.(js|jsx|tsx)$/,
+          exclude: /node_modules/,
           loader: 'babel-loader',
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: "babel-loader"
+            },
+            {
+              loader: "react-svg-loader",
+              options: {
+                jsx: true // true outputs JSX tags
+              }
+            }
+          ]
+        },
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: 'ts-loader'
         },
         {
           test: /\.css$/,
@@ -92,23 +111,18 @@ module.exports = (_env, argv) => {
           ]
         },
         {
-          test: /\.(jpe?g|png|gif|svg)$/i,
+          test: /\.(jpe?g|png|gif)$/i,
           loader: "file-loader",
           options: {
             name: "img/[name].[ext]"
           }
         },
         {
-          test: /\.tsx?$/,
-          exclude: /node_modules/,
-          use: 'ts-loader'
-        },
-        {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           use: [
             'file-loader',
           ],
-        },
+        }
       ]
     },
     resolve: {

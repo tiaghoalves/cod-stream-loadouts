@@ -41,6 +41,7 @@ export const HideButton = styled.button`
   }
 
   svg {
-    margin: -1px;
+    margin: auto auto auto -2px;
+    width: 20px;
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 // import { useHistory, match } from "react-router-dom";
 
-import { ReactComponent as ArrowLeft } from "./../../images/utils/arrow-left.svg";
+import ArrowLeft from "./../../images/utils/arrow-left.svg";
 
 import {
   Container,
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ match }: HeaderProps) => {
 
   return (
     <Container>
-      {/* {showBackButton && (<BackButton onClick={handleBack}><ArrowLeft width="15" height="15" /> Voltar</BackButton>)} */}
+      {showBackButton && (<BackButton onClick={handleBack}><ArrowLeft /> Voltar</BackButton>)}
       <h3>Stream Loadouts</h3>
     </Container>
   );

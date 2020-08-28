@@ -48,4 +48,8 @@ export const BackButton = styled.button`
     box-shadow: 0 0 4px #197AAD, inset 0px 0px 6px 1px #197AAD;
   }
 
+  svg {
+    width: 25px;
+    height: 25px;
+  }
 `;
