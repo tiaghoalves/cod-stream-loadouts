@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   Container,
@@ -34,10 +34,9 @@ const LoadoutsList: React.FC<{ size?: number | null }> = ({ size }) => {
         {loadouts.map(loadout => {
           return (
             <li key={loadout.index}>
-              {/* <Link to={`/loadout/${loadout.index}`}>
+              <Link to={`/loadout/${loadout.index}`}>
                 <ListButton>{loadout.name}</ListButton>
-              </Link> */}
-              <ListButton>{loadout.name}</ListButton>
+              </Link>
             </li>
           );
         })}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Header from './../Header';
 import Loadouts from './../Loadouts';
@@ -15,9 +15,7 @@ interface RouteMatchType {
 
 const Layout: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
-  //let match = useRouteMatch<RouteMatchType>('/Loadout/:index');
-  console.log('ChevronLeft => ', ChevronLeft);
-  console.log('ChevronRight => ', ChevronRight);
+  let match = useRouteMatch<RouteMatchType>('/Loadout/:index');
 
   const handleHideButton = () => {
     setIsVisible(!isVisible);
@@ -26,17 +24,15 @@ const Layout: React.FC = () => {
   return (
     <>
       <Container isVisible={isVisible}>
-        {/* <Header match={match} /> */}
-        <Header match={null} />
-        <Loadouts />
-        {/* <Switch>
+        <Header match={match} />
+        <Switch>
           <Route exact path="/">
             <Loadouts />
           </Route>
           <Route path="/Loadout/:index">
             <SelectedLoadout />
           </Route>
-        </Switch> */}
+        </Switch>
       </Container>
       <HideButton onClick={handleHideButton}>
         {(isVisible) ? (<ChevronLeft />) : (<ChevronRight />)}

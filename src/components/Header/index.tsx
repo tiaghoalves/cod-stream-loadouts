@@ -1,5 +1,5 @@
 import React from "react";
-// import { useHistory, match } from "react-router-dom";
+import { useHistory, match } from "react-router-dom";
 
 import ArrowLeft from "./../../images/utils/arrow-left.svg";
 
@@ -8,27 +8,20 @@ import {
   BackButton
 } from './styles';
 
-// interface HeaderProps {
-//   match: match<{
-//     index: string;
-//   }> | null;
-// }
-
 interface HeaderProps {
-  match: {
+  match: match<{
     index: string;
-    isExact: boolean;
-  } | null;
+  }> | null;
 }
 
 const Header: React.FC<HeaderProps> = ({ match }: HeaderProps) => {
   console.log('Header ->', match);
 
-  //let history = useHistory();
+  let history = useHistory();
   let showBackButton = (match !== null && match.isExact) ? true : false;
 
   const handleBack = () => {
-    //history.push("/");
+    history.push("/");
   }
 
   return (
