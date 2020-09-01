@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import Header from './../Header';
-import Loadouts from './../Loadouts';
-import SelectedLoadout from './../SelectedLoadout';
+import Loadouts from './../VideoOverlayPage/Loadouts';
+import SelectedLoadout from '../VideoOverlayPage/SelectedLoadout';
 import ChevronLeft from "./../../images/utils/chevron-left.svg";
 import ChevronRight from "./../../images/utils/chevron-right.svg";
 

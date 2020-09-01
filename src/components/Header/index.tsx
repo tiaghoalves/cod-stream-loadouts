@@ -15,10 +15,9 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ match }: HeaderProps) => {
-  console.log('Header ->', match);
-
+  console.log('Header match ->', match);
   let history = useHistory();
-  let showBackButton = (match !== null && match.isExact) ? true : false;
+  let showBackButton = (match && match.isExact) ? true : false;
 
   const handleBack = () => {
     history.push("/");

@@ -4,8 +4,8 @@ import {
   Container,
 } from './styles';
 
-import LoadoutItems from './../LoadoutItems';
-import LoadoutsList from './../LoadoutsList';
+import LoadoutItems from '../LoadoutItems';
+import LoadoutsList from '../LoadoutsList';
 
 function Loadouts() {
   console.log('window.Twitch -> ', window.Twitch);

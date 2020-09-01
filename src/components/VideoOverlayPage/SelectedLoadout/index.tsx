@@ -1,12 +1,12 @@
 import React from "react";
 
-import RoundMag from './../../images/attachments/ammunition/60roundMags.png';
-import taticalSuppressor from './../../images/attachments/muzzle/taticalSuppressor.png';
-import sleightOfHand from './../../images/attachments/perk/sleightOfHand.png';
-import integralHybrid from './../../images/attachments/optic/integralHybrid.png';
-import comandoForegrip from './../../images/attachments/underbarrel/comandoForegrip.png';
+import RoundMag from './../../../images/attachments/ammunition/60roundMags.png';
+import taticalSuppressor from './../../../images/attachments/muzzle/taticalSuppressor.png';
+import sleightOfHand from './../../../images/attachments/perk/sleightOfHand.png';
+import integralHybrid from './../../../images/attachments/optic/integralHybrid.png';
+import comandoForegrip from './../../../images/attachments/underbarrel/comandoForegrip.png';
 
-import LoadoutItems from './../LoadoutItems';
+import LoadoutItems from '../LoadoutItems';
 
 import {
   Container,

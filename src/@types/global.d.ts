@@ -2,4 +2,5 @@ interface Window {
   Twitch: any;
 }
 
-window.Twitch = window.Twitch.ext || {};
+Twitch = window.Twitch.ext || {};
+const Twitch = Twitch.ext;

@@ -1,12 +1,12 @@
 import React, { useRef, RefObject } from 'react';
 
-import Grau from './../../images/weapons/Grau_556.png';
-import Mp7 from './../../images/weapons/MP7.png';
-import FragGrenade from './../../images/utilities/icon_equipment_frag.png';
-import HeartbeatSensor from './../../images/utilities/heartbeat_sensor.png';
-import DoubleTimePerk from './../../images/perks/Doubletime.png';
-import OverkillPerk from './../../images/perks/Overkill.png';
-import AmpedPerk from './../../images/perks/Amped.png';
+import Grau from './../../../images/weapons/Grau_556.png';
+import Mp7 from './../../../images/weapons/MP7.png';
+import FragGrenade from './../../../images/utilities/icon_equipment_frag.png';
+import HeartbeatSensor from './../../../images/utilities/heartbeat_sensor.png';
+import DoubleTimePerk from './../../../images/perks/Doubletime.png';
+import OverkillPerk from './../../../images/perks/Overkill.png';
+import AmpedPerk from './../../../images/perks/Amped.png';
 
 import {
   Container,

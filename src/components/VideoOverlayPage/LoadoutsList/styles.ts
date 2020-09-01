@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import listButttonImg from "../../images/global-nav-bg.png";
+import listButttonImg from "../../../images/global-nav-bg.png";
 
 export const Container = styled.div`
   ul {

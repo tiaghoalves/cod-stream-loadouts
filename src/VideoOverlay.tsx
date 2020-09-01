@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import VideoOverlay from './components/VideoOverlayPage';
 
 ReactDOM.render(
-  <App />,
+  <VideoOverlay />,
   document.getElementById('root')
 );

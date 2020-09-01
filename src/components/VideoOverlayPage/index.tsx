@@ -1,10 +1,10 @@
 import React from 'react';
 import { MemoryRouter as Router } from 'react-router-dom';
 
-import { GlobalStyle } from './GlobalStyles/GlobalStyles';
-import Layout from './Layout';
+import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
+import Layout from './../Layout';
 
-const App: React.FC = () => {
+const VideoOverlay: React.FC = () => {
   return (
     <Router
       initialEntries={["/", "/loadout/:index"]}
@@ -16,4 +16,4 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+export default VideoOverlay;
