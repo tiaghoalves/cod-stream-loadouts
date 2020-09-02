@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ConfigPage from "./components/ConfigPage/Config";
+import ConfigPage from "./components/ConfigPage";
 
 ReactDOM.render(
   <ConfigPage />,
