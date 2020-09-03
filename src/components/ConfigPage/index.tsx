@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MemoryRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
-import Config from './Config';
+import ConfigLoadouts from './ConfigLoadouts';
 
 const ConfigPage: React.FC = () => {
   return (
-    <Router>
+    <Router
+      initialEntries={["/", "/loadout/:index"]}
+      initialIndex={0}
+    >
       <GlobalStyle />
-      <Layout>
+      <Layout isConfig={true}>
         <Switch>
           <Route exact path="/">
-            <Config />
+            <ConfigLoadouts />
           </Route>
         </Switch>
       </Layout>

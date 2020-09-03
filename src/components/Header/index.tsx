@@ -1,32 +1,38 @@
 import React from "react";
 import { useHistory, match } from "react-router-dom";
 
-import ArrowLeft from "./../../images/utils/arrow-left.svg";
+import ArrowLeft from "./../../assets/arrow-left.svg";
 
 import {
   Container,
-  BackButton
+  BackButton,
+  Title
 } from './styles';
 
-interface HeaderProps {
-  match: match<{
-    index: string;
-  }> | null;
+interface IProps {
+  match: match<{ index: string; }> | null;
+  isConfig?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ match }: HeaderProps) => {
-  console.log('Header match ->', match);
+const Header: React.FC<IProps> = ({ match, isConfig }) => {
   let history = useHistory();
-  let showBackButton = (match && match.isExact) ? true : false;
+  let loadoutSelected = (match && match.isExact) ? true : false;
 
   const handleBack = () => {
     history.push("/");
   }
 
   return (
-    <Container>
-      {showBackButton && (<BackButton onClick={handleBack}><ArrowLeft /> Voltar</BackButton>)}
-      <h3>Stream Loadouts</h3>
+    <Container isConfig={isConfig}>
+      {
+        loadoutSelected &&
+        (
+          <BackButton onClick={handleBack}>
+            <ArrowLeft /> Back
+          </BackButton>
+        )
+      }
+      <Title>{isConfig ? 'Configuration' : 'Stream Loadouts'}</Title>
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import ModernWarfareFont from './../../fonts/ModernWarfareFont.ttf';
+import ModernWarfareFont from './../../assets/fonts/ModernWarfareFont.ttf';
 
 export const fontFace = css`
   @font-face {

@@ -1,14 +1,22 @@
-import styled from 'styled-components';
-import listButttonImg from "../../images/global-nav-bg.png";
+import styled, { css } from 'styled-components';
+import listButttonImg from "../../assets/images/global-nav-bg.png";
 
-export const Container = styled.div<{ isVisible: boolean }> `
+const ContainerIsConfig = css`
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 580px;
+`;
+
+export const Container = styled.div<{ isVisible: boolean, isConfig: boolean }> `
+  ${props => props.isConfig ? ContainerIsConfig : ''}
   display: ${props => props.isVisible ? 'flex' : 'none'};
+  position: relative;
   flex-direction: column;
   max-width: 580px;
   height: 650px;
   padding: 10px;
   background: #000000a6;
-  position: relative;
 `;
 
 export const HideButton = styled.button`

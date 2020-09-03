@@ -1,10 +1,39 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const ContainerDivSelected = css`
+  > div:after,
+  > div:before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
+  > div:after {
+    right: 0;
+    bottom: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #1d1d1d;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid #1d1d1d;
+  }
+
+  > div:before {
+    top: 0;
+    left: 0;
+    border-top: 10px solid #1d1d1d;
+    border-right: 10px solid transparent;
+    border-left: 5px solid #1d1d1d;
+    border-bottom: 5px solid transparent;
+  }
+`;
 
 export const Container = styled.div<{ selected: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 10px 0px;
+  margin: 5px 0px;
 
   h4, h5 {
     color: #fff;
@@ -26,34 +55,17 @@ export const Container = styled.div<{ selected: boolean }>`
     color: var(--subtitle-color);
   }
 
-  ${props => props.selected ? '' : `
-    > div:after,
-    > div:before {
-      content: '';
-      position: absolute;
-      width: 0px;
-      height: 0px;
-      background: transparent;
-    }
+  ${props => props.selected ? '' : ContainerDivSelected}
+`;
 
-    > div:after {
-      right: 0;
-      bottom: 0;
-      border-top: 10px solid transparent;
-      border-right: 10px solid #1d1d1d;
-      border-left: 5px solid transparent;
-      border-bottom: 5px solid #1d1d1d;
-    }
-
-    > div:before {
-      top: 0;
-      left: 0;
-      border-top: 10px solid #1d1d1d;
-      border-right: 10px solid transparent;
-      border-left: 5px solid #1d1d1d;
-      border-bottom: 5px solid transparent;
-    }
-  `}
+const WeaponsSelected = css`
+  :hover, :active, :focus {
+    background: #282828;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px #000;
+    border-top: 1px solid #7AE1EA;
+    transition: background, text-shadow, border-top ease 1s;
+  }
 `;
 
 // Weapons
@@ -73,16 +85,7 @@ export const Weapons = styled.div.attrs((props) => {
   transition-duration: 0.3s;
   transition-timing-function: ease;
 
-  ${props => props.selected ? `
-    :hover, :active, :focus {
-      background: #282828;
-      cursor: pointer;
-      text-shadow: 2px 2px 5px #000;
-  
-      border-top: 1px solid #7AE1EA;
-      transition: background, text-shadow, border-top ease 1s;
-    }
-  ` : ''}
+  ${props => props.selected ? WeaponsSelected : ''}
 
   img {
     display: block;
@@ -199,20 +202,20 @@ export const UtilityImage = styled.div`
     width: 80px;
     height: 90%;
   }
-  `;
+`;
 
 export const UtilityDetails = styled.div`
-    background: transparent;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+  background: transparent;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 
-    span {
-      width: fit-content;
-      margin: 10px 5px;
-    }
+  span {
+    width: fit-content;
+    margin: 10px 5px;
+  }
 
-    span h5 h4 {
-      flex-direction: column;
-    }
+  span h5 h4 {
+    flex-direction: column;
+  }
 `;

@@ -5,9 +5,8 @@ import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
 import Loadouts from './Loadouts';
 import SelectedLoadout from './SelectedLoadout';
-
-import ChevronLeft from "./../../images/utils/chevron-left.svg";
-import ChevronRight from "./../../images/utils/chevron-right.svg";
+import ChevronLeft from "./../../assets/chevron-left.svg";
+import ChevronRight from "./../../assets/chevron-right.svg";
 
 import { HideButton } from './styles';
 

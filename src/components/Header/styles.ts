@@ -1,16 +1,15 @@
 import styled from "styled-components";
-import listButttonImg from "./../../images/global-nav-bg.png";
+import listButttonImg from "./../../assets/images/global-nav-bg.png";
 
-export const Container = styled.header`
+export const Container = styled.header<{ isConfig: boolean }>`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
+  width: 100%;
 
-  h3 {
-    text-shadow: 0px 1px 5px #000;
-    margin: auto;
-  }
+  ${props => props.isConfig ? 'margin: 0 auto;' : ''}
 `;
 
 export const BackButton = styled.button`
@@ -18,13 +17,14 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   position: absolute;
+  left: 0;
   margin: 0px;
   width: 60px;
   height: 30px;
   outline: none;
 
   font-style: normal;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.10;
 
   color: #94bbc2;
@@ -52,4 +52,9 @@ export const BackButton = styled.button`
     width: 25px;
     height: 25px;
   }
+`;
+
+export const Title = styled.h3`
+  text-shadow: 0px 1px 5px #000;
+  margin: 0 auto;
 `;

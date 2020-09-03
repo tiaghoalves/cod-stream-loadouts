@@ -1,12 +1,12 @@
 import React, { useRef, RefObject } from 'react';
 
-import Grau from './../../../images/weapons/Grau_556.png';
-import Mp7 from './../../../images/weapons/MP7.png';
-import FragGrenade from './../../../images/utilities/icon_equipment_frag.png';
-import HeartbeatSensor from './../../../images/utilities/heartbeat_sensor.png';
-import DoubleTimePerk from './../../../images/perks/Doubletime.png';
-import OverkillPerk from './../../../images/perks/Overkill.png';
-import AmpedPerk from './../../../images/perks/Amped.png';
+import Grau from './../../../assets/images/weapons/Grau_556.png';
+import Mp7 from './../../../assets/images/weapons/MP7.png';
+import FragGrenade from './../../../assets/images/utilities/icon_equipment_frag.png';
+import HeartbeatSensor from './../../../assets/images/utilities/heartbeat_sensor.png';
+import DoubleTimePerk from './../../../assets/images/perks/Doubletime.png';
+import OverkillPerk from './../../../assets/images/perks/Overkill.png';
+import AmpedPerk from './../../../assets/images/perks/Amped.png';
 
 import {
   Container,
@@ -29,7 +29,6 @@ const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, chil
   const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
-      console.log('ref.current ->', ref.current);
     }
   };
 
@@ -42,7 +41,7 @@ const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, chil
         tabIndex={1}
       >
         <WeaponsHeader>
-          <h4>Arma principal</h4>
+          <h4>Primary</h4>
           <AttachSlotsContainer>
             <WeaponAttachSlots />
             <WeaponAttachSlots />
@@ -62,7 +61,7 @@ const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, chil
         tabIndex={2}
       >
         <WeaponsHeader>
-          <h4>Secundária</h4>
+          <h4>Secundary</h4>
           <AttachSlotsContainer>
             <WeaponAttachSlots />
             <WeaponAttachSlots />
@@ -76,30 +75,30 @@ const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, chil
       </Weapons>
 
       <Perks>
-        <h4>Vantagens</h4>
+        <h4>Perks</h4>
 
         <PerkImageGroup>
           <PerkImage>
             <img src={DoubleTimePerk} alt="Acelerado" width="100px" height="50px" />
-            <span>Acelerado</span>
+            <span>Double Time</span>
           </PerkImage>
 
           <PerkImage>
             <img src={OverkillPerk} alt="Massacre" width="100px" height="50px" />
-            <span>Massacre</span>
+            <span>Overkill</span>
           </PerkImage>
 
           <PerkImage>
             <img src={AmpedPerk} alt="Amplificado" width="100px" height="50px" />
-            <span>Amplificado</span>
+            <span>Amped</span>
           </PerkImage>
         </PerkImageGroup>
       </Perks>
 
       <Utilities>
         <UtilityDetails>
-          <h4>Letal</h4>
-          <span>Granada</span>
+          <h4>Lethal</h4>
+          <span>Frag Granade</span>
         </UtilityDetails>
         <UtilityImage>
           <img src={FragGrenade} alt="Granada" />
@@ -108,8 +107,8 @@ const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, chil
 
       <Utilities>
         <UtilityDetails>
-          <h4>Tático</h4>
-          <span>Sensor de pulsação</span>
+          <h4>Tactical</h4>
+          <span>Heartbeat Sensor</span>
         </UtilityDetails>
         <UtilityImage>
           <img src={HeartbeatSensor} alt="Sensor de pulsação" />

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import listButttonImg from "./../../images/global-nav-bg.png";
+import listButttonImg from "./../../assets/images/global-nav-bg.png";
 
 export const HideButton = styled.button`
   top: 0;

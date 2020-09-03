@@ -1,0 +1,101 @@
+{
+  "loadouts": [
+    {
+      "name": "Loadout 1",
+      "loadoutItems": {
+        "weapons": [
+          {
+            "name": "Grau 5.56",
+            "type": "primary",
+            "image": "./../../assets/images/weapons/GRAU.png",
+            "attachments": [
+              {
+                "category": "Muzzle",
+                "name": "Tactical Suppressor",
+                "image": "./../../assets/images/attachments/muzzle/tacticalSuppressor.png"
+              },
+              {
+                "category": "Optic",
+                "name": "Integral Hibrida",
+                "image": "./../../assets/images/attachments/optic/integralHybrid.png"
+              },
+              {
+                "category": "Underbarrel",
+                "name": "Comando Foregrip",
+                "image": "./../../assets/images/attachments/underbarrel/comandoForegrip.png"
+              },
+              {
+                "category": "Ammunition",
+                "name": "60 Round Mags",
+                "image": "./../../assets/images/attachments/ammunition/60roundMags.png"
+              },
+              {
+                "category": "Perks",
+                "name": "Sleight Of Hand",
+                "image": "./../../assets/images/attachments/perk/sleightOfHand.png"
+              }
+            ]
+          },
+          {
+            "name": "MP7",
+            "type": "secundary",
+            "image": "./../../assets/images/weapons/MP7.png",
+            "attachments": [
+              {
+                "category": "Muzzle",
+                "name": "Tactical Suppressor",
+                "image": "./../../assets/images/attachments/muzzle/tacticalSuppressor.png"
+              },
+              {
+                "category": "Optic",
+                "name": "Integral Hibrida",
+                "image": "./../../assets/images/attachments/optic/integralHybrid.png"
+              },
+              {
+                "category": "Underbarrel",
+                "name": "Comando Foregrip",
+                "image": "./../../assets/images/attachments/underbarrel/comandoForegrip.png"
+              },
+              {
+                "category": "Ammunition",
+                "name": "60 Round Mags",
+                "image": "./../../assets/images/attachments/ammunition/60roundMags.png"
+              },
+              {
+                "category": "Perks",
+                "name": "Sleight Of Hand",
+                "image": "./../../assets/images/attachments/perk/sleightOfHand.png"
+              }
+            ]
+          }
+        ],
+        "pearks": [
+          {
+            "name": "Acelerado",
+            "image": "./../../assets/images/perks/DoubleTime.png"
+          },
+          {
+            "name": "Massacre",
+            "image": "./../../assets/images/perks/Overkill.png"
+          },
+          {
+            "name": "Amplificado",
+            "image": "./../../assets/images/perks/Amped.png"
+          }
+        ],
+        "Utilities": [
+          {
+            "type": "letal",
+            "name": "Granada",
+            "image": "./../../assets/images/utilities/icon_equipment_frag.png"
+          },
+          {
+            "type": "tatico",
+            "name": "Sensor de pulsação",
+            "image": "./../../assets/images/utilities/heartbeat_sensor.png"
+          }
+        ]
+      }
+    }
+  ]
+}
