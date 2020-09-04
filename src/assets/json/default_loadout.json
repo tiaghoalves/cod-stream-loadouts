@@ -69,7 +69,7 @@
             ]
           }
         ],
-        "pearks": [
+        "perks": [
           {
             "name": "DoubleTime",
             "image": "./../../assets/images/perks/DoubleTime.png"

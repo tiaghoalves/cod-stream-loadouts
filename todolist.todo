@@ -26,20 +26,29 @@ TODO:
       }
     `
     - Inicialmente traduções em 'pt-br' e 'en'
+  ☐ Definir customização de loadout padrão
+
   Config Page:
     - Criar layout para pagina de config da extensão @started(20-08-28 19:31)
     Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
       - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
-      ConfigLoadoutList:
+
+      Loadouts:
+        ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
+        ConfigurationService:
+          ☐ Carregar informações do ConfigService
+          ☐ Usar dados do ConfigService para alimentar os componentes (LoadoutList, LoadoutItems)
+            Verificar se existe dados dos loadouts no ConfigService, caso contrário considerar usar json de loadout padrão (default_loadout.json)
+      LoadoutList:
         ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
-          - *Iniciar com apenas um loadout na lista por default*
+          Iniciar com apenas um loadout na lista por default
         ☐ Construir objeto com os dados do Loadout
         ☐ Persistir infos dos loadouts no Configuration Service
-      ConfigLoadoutItems:
-        - Manter funcionalidade de mostrar os todos items relacionados ao loadout
-        - Alterar a visualização dos items conforme evento de hover sobre os loadouts
-        ☐ Renderizar os items do loadout considernado os valores do 'default_loadout.json'
-      ConfigLoadoutItems (Selected):
+      LoadoutItems:
+        ☐ Renderizar os items do loadout considernado os valores default 'default_loadout.json'
+        ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
+        Incluir estados para os componentes considerando dados do json 'default_loadout.json':
+      LoadoutItems(Selected):
         - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
         - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
           - Generalizar mais o styled-component 'AttachmentsContainer' quebrando em partes menores mais básicas
@@ -48,8 +57,8 @@ TODO:
   Video Overlay:
     LoadoutItems:
       ☐ Efeitos de hover na lista de loadouts para alterar os itens mostrados
-      ☐ Quebrar em componentes menores:
-        - Adapatar para renderizar de forma dinamica considerando os dados do json
+      - Quebrar em componentes menores:
+        ☐ Adapatar para renderizar de forma dinamica considerando os dados do json
         ✔ Weapons @done(20-09-03 23:11)
         ✔ Perks @done(20-09-03 23:11)
         ✔ Utilities @done(20-09-03 23:11)

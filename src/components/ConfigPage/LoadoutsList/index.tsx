@@ -10,31 +10,32 @@ import {
   Title
 } from './styles';
 
-interface ILoadouts {
-  name: string;
+interface IProps {
+  loadoutsNameList?: string[];
 }
 
-const LoadoutsList: React.FC<{ size?: number | null }> = ({ size }) => {
-  const defaultLoadout: ILoadouts = {
-    name: 'Loadout 1'
-  };
-
-  const [loadouts, setLoadouts] = useState<ILoadouts[]>([defaultLoadout]);
+const LoadoutsList: React.FC<IProps> = ({ loadoutsNameList }) => {
+  const [loadouts, setLoadouts] = useState<string[]>(['Loadout 1']);
 
   const handleAddLoadout = () => {
-    setLoadouts([...loadouts, { name: `Loadout ${loadouts.length + 1}` }]);
-    console.log(loadouts);
+    setLoadouts([...loadouts, `Loadout ${loadouts.length + 1}`]);
   };
+
+  useEffect(() => {
+    if (loadoutsNameList) {
+      setLoadouts([...loadoutsNameList]);
+    }
+  }, []);
 
   return (
     <Container>
       <Title>Loadouts List</Title>
       <ul>
-        {loadouts.map((loadout, index: number) => {
+        {loadouts.map((loadoutName, index) => {
           return (
             <li key={index}>
               <Link to={`/loadout/${index}`}>
-                <ListButton>{loadout.name}</ListButton>
+                <ListButton>{loadoutName}</ListButton>
               </Link>
             </li>
           );

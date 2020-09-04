@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import LoadoutsList from './../LoadoutsList';
 import LoadoutItems from './../LoadoutItems';
-// import DefaultLoadout from './../../../assets/json/default_loadout.json';
+import DefaultLoadout from './../../../assets/json/default_loadout.json';
 
 import { Container } from './styles';
 
@@ -12,11 +12,21 @@ const Loadouts: React.FC = () => {
     if (delta.includes('theme')) { }
   }
 
-  // console.log('DefaultLoadout ->', DefaultLoadout);
+  let loadoutsNameList: string[];
+
+  useEffect(() => {
+    console.log('DefaultLoadout ->', DefaultLoadout);
+    const loadoutsData: LoadoutsData = JSON.parse(JSON.stringify(DefaultLoadout));
+    console.log('loadouts >', loadoutsData);
+
+    loadoutsNameList = loadoutsData.loadouts.map((load) => load.name);
+    console.log('loadoutsNameList >', loadoutsNameList);
+
+  }, []);
 
   return (
     <Container>
-      <LoadoutsList />
+      <LoadoutsList loadoutsNameList={loadoutsNameList} />
 
       <LoadoutItems />
     </Container>
