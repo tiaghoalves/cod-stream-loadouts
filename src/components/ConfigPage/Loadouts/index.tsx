@@ -1,20 +1,26 @@
 import React from 'react';
 
-import ConfigLoadoutsList from './../ConfigLoadoutsList';
+import LoadoutsList from './../LoadoutsList';
+import LoadoutItems from './../LoadoutItems';
+// import DefaultLoadout from './../../../assets/json/default_loadout.json';
 
 import { Container } from './styles';
 
-const ConfigLoadouts: React.FC = () => {
+const Loadouts: React.FC = () => {
   function contextUpdate(context: any, delta: any) {
     // Considerar: Filtrar por alguma prop do context para usar quando for alterada (ex: 'language' => 'en' || 'pt-br')
     if (delta.includes('theme')) { }
   }
 
+  // console.log('DefaultLoadout ->', DefaultLoadout);
+
   return (
     <Container>
-      <ConfigLoadoutsList />
+      <LoadoutsList />
+
+      <LoadoutItems />
     </Container>
   );
 }
 
-export default ConfigLoadouts;
+export default Loadouts;

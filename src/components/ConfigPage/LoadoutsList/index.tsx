@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PlusIcon from './../../../assets/plus.svg';
-import DefaultLoadout from './../../../assets/json/default_loadout.json';
 
 import {
   Container,
@@ -15,12 +14,10 @@ interface ILoadouts {
   name: string;
 }
 
-const ConfigLoadoutsList: React.FC<{ size?: number | null }> = ({ size }) => {
+const LoadoutsList: React.FC<{ size?: number | null }> = ({ size }) => {
   const defaultLoadout: ILoadouts = {
     name: 'Loadout 1'
   };
-
-  console.log('DefaultLoadout ->', DefaultLoadout);
 
   const [loadouts, setLoadouts] = useState<ILoadouts[]>([defaultLoadout]);
 
@@ -50,4 +47,4 @@ const ConfigLoadoutsList: React.FC<{ size?: number | null }> = ({ size }) => {
   );
 }
 
-export default ConfigLoadoutsList;
+export default LoadoutsList;

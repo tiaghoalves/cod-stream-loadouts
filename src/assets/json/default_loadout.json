@@ -71,27 +71,27 @@
         ],
         "pearks": [
           {
-            "name": "Acelerado",
+            "name": "DoubleTime",
             "image": "./../../assets/images/perks/DoubleTime.png"
           },
           {
-            "name": "Massacre",
+            "name": "Overkill",
             "image": "./../../assets/images/perks/Overkill.png"
           },
           {
-            "name": "Amplificado",
+            "name": "Amped",
             "image": "./../../assets/images/perks/Amped.png"
           }
         ],
-        "Utilities": [
+        "utilities": [
           {
-            "type": "letal",
-            "name": "Granada",
-            "image": "./../../assets/images/utilities/icon_equipment_frag.png"
+            "type": "lethal",
+            "name": "Frag Grenade",
+            "image": "./../../assets/images/utilities/frag_grenade.png"
           },
           {
-            "type": "tatico",
-            "name": "Sensor de pulsação",
+            "type": "tactical",
+            "name": "Heartbeat Sensor",
             "image": "./../../assets/images/utilities/heartbeat_sensor.png"
           }
         ]

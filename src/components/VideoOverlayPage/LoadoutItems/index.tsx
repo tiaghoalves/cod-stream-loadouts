@@ -2,7 +2,7 @@ import React, { useRef, RefObject } from 'react';
 
 import Grau from './../../../assets/images/weapons/Grau_556.png';
 import Mp7 from './../../../assets/images/weapons/MP7.png';
-import FragGrenade from './../../../assets/images/utilities/icon_equipment_frag.png';
+import FragGrenade from './../../../assets/images/utilities/frag_grenade.png';
 import HeartbeatSensor from './../../../assets/images/utilities/heartbeat_sensor.png';
 import DoubleTimePerk from './../../../assets/images/perks/Doubletime.png';
 import OverkillPerk from './../../../assets/images/perks/Overkill.png';
@@ -22,7 +22,7 @@ import {
   UtilityDetails
 } from './styles';
 
-const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected = false, children }) => {
+const LoadoutItems: React.FC<{ selected?: boolean }> = ({ selected }) => {
   const primaryRef = useRef<HTMLDivElement>(null);
   const secundaryRef = useRef<HTMLDivElement>(null);
 

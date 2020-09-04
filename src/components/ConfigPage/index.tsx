@@ -3,7 +3,7 @@ import { MemoryRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
-import ConfigLoadouts from './ConfigLoadouts';
+import Loadouts from './Loadouts';
 
 const ConfigPage: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const ConfigPage: React.FC = () => {
       <Layout isConfig={true}>
         <Switch>
           <Route exact path="/">
-            <ConfigLoadouts />
+            <Loadouts />
           </Route>
         </Switch>
       </Layout>

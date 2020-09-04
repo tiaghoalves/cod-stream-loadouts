@@ -19,6 +19,12 @@ TODO:
   ☐ Suporte para os idiomas
     *Iniciar somente com ingles
     *Usar callback onContext do Twitch Helper filtrando pela propriedade 'language' para identificar qual idioma atual
+    `js
+      function contextUpdate(context: any, delta: any) {
+        // Considerar: Filtrar por alguma prop do context para usar quando for alterada (ex: 'language' => 'en' || 'pt-br')
+        if (delta.includes('theme')) { }
+      }
+    `
     - Inicialmente traduções em 'pt-br' e 'en'
   Config Page:
     - Criar layout para pagina de config da extensão @started(20-08-28 19:31)
@@ -31,7 +37,8 @@ TODO:
         ☐ Persistir infos dos loadouts no Configuration Service
       ConfigLoadoutItems:
         - Manter funcionalidade de mostrar os todos items relacionados ao loadout
-        - Alterar a visualização dos items conforme evento de hover sobre os loadouts  
+        - Alterar a visualização dos items conforme evento de hover sobre os loadouts
+        ☐ Renderizar os items do loadout considernado os valores do 'default_loadout.json'
       ConfigLoadoutItems (Selected):
         - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
         - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
@@ -42,9 +49,10 @@ TODO:
     LoadoutItems:
       ☐ Efeitos de hover na lista de loadouts para alterar os itens mostrados
       ☐ Quebrar em componentes menores:
-        ☐ Weapons
-        ☐ Perks
-        ☐ Utilities
+        - Adapatar para renderizar de forma dinamica considerando os dados do json
+        ✔ Weapons @done(20-09-03 23:11)
+        ✔ Perks @done(20-09-03 23:11)
+        ✔ Utilities @done(20-09-03 23:11)
     LoadoutItems(Selected):
       ☐ Efeitos de hover na lista de items do loadouts para alterar os attachments das armas (Primaria e secundaria)
   

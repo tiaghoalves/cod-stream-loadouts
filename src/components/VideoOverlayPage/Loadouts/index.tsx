@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Container } from './styles';
-
 import LoadoutItems from '../LoadoutItems';
 import LoadoutsList from '../LoadoutsList';
+
+import { Container } from './styles';
 
 function Loadouts() {
   return (

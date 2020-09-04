@@ -5,6 +5,7 @@ import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
 import Loadouts from './Loadouts';
 import SelectedLoadout from './SelectedLoadout';
+
 import ChevronLeft from "./../../assets/chevron-left.svg";
 import ChevronRight from "./../../assets/chevron-right.svg";
 
