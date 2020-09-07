@@ -4,6 +4,7 @@ import { MemoryRouter as Router, Route, Switch } from 'react-router-dom';
 import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
 import Loadouts from './Loadouts';
+import SelectedLoadout from './SelectedLoadout';
 
 const ConfigPage: React.FC = () => {
   return (
@@ -16,6 +17,9 @@ const ConfigPage: React.FC = () => {
         <Switch>
           <Route exact path="/">
             <Loadouts />
+          </Route>
+          <Route path="/loadout/:index">
+            <SelectedLoadout />
           </Route>
         </Switch>
       </Layout>

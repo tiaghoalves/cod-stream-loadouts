@@ -13,7 +13,7 @@ const WeaponSelected = css`
 
 export const Weapon = styled.div.attrs((props) => {
   return ({ tabIndex: props.tabIndex })
-}) < { selected: boolean } > `
+}) <{ selected: boolean }>`
   position: relative;
   width: 300px;
   height: 130px;

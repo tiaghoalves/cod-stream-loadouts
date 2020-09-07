@@ -1,12 +1,25 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const PerkSelected = css`
+  :hover, :active, :focus {
+    cursor: pointer;
+    background: #282828;
+    text-shadow: 2px 2px 5px #000;
+    border-top: 1px solid #7AE1EA;
+    transition: background, text-shadow, border-top ease 1s;
+  }
+`;
 
 // Perks
-export const Perk = styled.div`
+export const Perk = styled.div.attrs((props) => {
+  return ({ tabIndex: props.tabIndex })
+}) <{ selected: boolean }>`
   position: relative;
   width: 300px;
   height: 105px;
   display: flex;
   flex-direction: column;
+  outline: none;
 
   background-color: #1d1d1d;
   margin: 5px;
@@ -16,6 +29,8 @@ export const Perk = styled.div`
     margin-bottom: 0px;
     text-shadow: 0px 1px 4px #000;
   }
+
+  ${props => props.selected ? PerkSelected : ''}
 `;
 
 export const PerkImageGroup = styled.div`

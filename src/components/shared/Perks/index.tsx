@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, RefObject } from 'react';
 
 import {
   Perk,
@@ -14,12 +14,25 @@ interface IProps {
 }
 
 const Perks: React.FC<IProps> = ({ selected = false, data }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const bluePerk = data.find(perk => perk.type === "Blue");
   const redPerk = data.find(perk => perk.type === "Red");
   const yellowPerk = data.find(perk => perk.type === "Yellow");
 
+  const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
+    if (selected && ref !== null && ref.current) {
+      ref.current.focus();
+      console.log(ref.current);
+    }
+  };
+
   return (
-    <Perk>
+    <Perk
+      selected={selected}
+      ref={ref}
+      onMouseEnter={() => handleOnChange(ref)}
+      tabIndex={0}
+    >
       <h4>Perks</h4>
       <PerkImageGroup>
         {

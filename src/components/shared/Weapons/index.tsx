@@ -14,7 +14,6 @@ interface IProps {
   data?: Weapon[];
 }
 
-
 const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
   const primaryRef = useRef<HTMLDivElement>(null);
   const secundaryRef = useRef<HTMLDivElement>(null);
