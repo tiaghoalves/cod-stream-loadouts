@@ -56,5 +56,5 @@ export const Container = styled.div<{ selected: boolean }>`
     color: var(--subtitle-color);
   }
 
-  /* ${props => props.selected ? '' : ContainerDivSelected} */
+  ${props => props.selected ? '' : ContainerDivSelected}
 `;

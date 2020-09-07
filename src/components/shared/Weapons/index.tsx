@@ -20,8 +20,6 @@ const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
   const secundaryRef = useRef<HTMLDivElement>(null);
   const primaryWeapon = data.find(weapon => weapon.type === 'Primary');
   const secundaryWeapon = data.find(weapon => weapon.type === 'Secundary');
-  let imgPrimary = imageFromAssets(primaryWeapon.image);
-  let imgSecundary = imageFromAssets(secundaryWeapon.image);
 
   const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
     if (selected && ref !== null && ref.current) {
@@ -34,7 +32,7 @@ const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
       {
         data.map((weapon, index) => {
           const ref = weapon.type === 'Primary' ? primaryRef : secundaryRef;
-          const image = weapon.type === 'Primary' ? imgPrimary : imgSecundary;
+          const image = imageFromAssets(weapon.type === 'Primary' ? primaryWeapon.image : secundaryWeapon.image);
 
           return (
             <Weapon

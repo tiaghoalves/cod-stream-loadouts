@@ -10,9 +10,10 @@ const imageFromAssets = require.context('./../../../assets/images/', true);
 
 interface IProps {
   data?: Perk[];
+  selected?: boolean;
 }
 
-const Perks: React.FC<IProps> = ({ data }) => {
+const Perks: React.FC<IProps> = ({ selected = false, data }) => {
   const bluePerk = data.find(perk => perk.type === "Blue");
   const redPerk = data.find(perk => perk.type === "Red");
   const yellowPerk = data.find(perk => perk.type === "Yellow");

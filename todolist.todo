@@ -46,9 +46,9 @@ TODO:
         ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
       
       LoadoutItems:
-        ☐ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28)
+        ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
           Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
-        ☐ Renderizar os items do loadout considernado os valores default 'default_loadout.json'
+        ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
         ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
           Incluir estados para os componentes considerando dados do json 'default_loadout.json':
   

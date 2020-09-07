@@ -18,8 +18,8 @@ const LoadoutItems: React.FC<IProps> = ({ selected = false, loadout }) => {
   return (
     <Container selected={selected}>
       <Weapons selected={selected} data={loadoutItems.weapons} />
-      <Perks data={loadoutItems.perks} />
-      <Utilities data={loadoutItems.utilities} />
+      <Perks selected={selected} data={loadoutItems.perks} />
+      <Utilities selected={selected} data={loadoutItems.utilities} />
     </Container>
   );
 };

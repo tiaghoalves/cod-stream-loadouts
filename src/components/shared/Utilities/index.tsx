@@ -10,12 +10,12 @@ import {
 
 interface IProps {
   data?: Utility[];
+  selected?: boolean;
 }
 
-const Utilities: React.FC<IProps> = ({ data }) => {
+const Utilities: React.FC<IProps> = ({ selected = false, data }) => {
   const lethal = data.find(util => util.type === "Lethal");
   const tactical = data.find(util => util.type === "Tactical");
-  console.log(lethal);
 
   return (
     <>
