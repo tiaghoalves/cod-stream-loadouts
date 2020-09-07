@@ -1,37 +1,41 @@
 import React from 'react';
 
+const imageFromAssets = require.context('./../../../assets/images/', true);
+
 import {
   Utility,
   UtilityDetails,
   UtilityImage
 } from './styles';
 
-import FragGrenade from './../../../assets/images/utilities/frag_grenade.png';
-import HeartbeatSensor from './../../../assets/images/utilities/heartbeat_sensor.png';
+interface IProps {
+  data?: Utility[];
+}
 
-const Utilities: React.FC = () => {
+const Utilities: React.FC<IProps> = ({ data }) => {
+  const lethal = data.find(util => util.type === "Lethal");
+  const tactical = data.find(util => util.type === "Tactical");
+  console.log(lethal);
 
   return (
     <>
-      <Utility>
-        <UtilityDetails>
-          <h4>Lethal</h4>
-          <span>Frag Granade</span>
-        </UtilityDetails>
-        <UtilityImage>
-          <img src={FragGrenade} alt="Granada" />
-        </UtilityImage>
-      </Utility>
+      {
+        data.map((utility, index) => {
+          const image = imageFromAssets(utility.type == "Lethal" ? lethal.image : tactical.image);
 
-      <Utility>
-        <UtilityDetails>
-          <h4>Tactical</h4>
-          <span>Heartbeat Sensor</span>
-        </UtilityDetails>
-        <UtilityImage>
-          <img src={HeartbeatSensor} alt="Sensor de pulsação" />
-        </UtilityImage>
-      </Utility>
+          return (
+            <Utility key={index}>
+              <UtilityDetails>
+                <h4>{utility.type}</h4>
+                <span>{utility.name}</span>
+              </UtilityDetails>
+              <UtilityImage>
+                <img src={image} alt={utility.name} />
+              </UtilityImage>
+            </Utility>
+          )
+        })
+      }
     </>
   );
 };

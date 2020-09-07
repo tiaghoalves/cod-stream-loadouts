@@ -6,30 +6,45 @@ import {
   PerkImage
 } from './styles';
 
-import DoubleTimePerk from './../../../assets/images/perks/Doubletime.png';
-import OverkillPerk from './../../../assets/images/perks/Overkill.png';
-import AmpedPerk from './../../../assets/images/perks/Amped.png';
+const imageFromAssets = require.context('./../../../assets/images/', true);
 
-const Perks: React.FC = () => {
+interface IProps {
+  data?: Perk[];
+}
+
+const Perks: React.FC<IProps> = ({ data }) => {
+  const bluePerk = data.find(perk => perk.type === "Blue");
+  const redPerk = data.find(perk => perk.type === "Red");
+  const yellowPerk = data.find(perk => perk.type === "Yellow");
 
   return (
     <Perk>
       <h4>Perks</h4>
       <PerkImageGroup>
-        <PerkImage>
-          <img src={DoubleTimePerk} alt="DoubleTimePerk" width="100px" height="50px" />
-          <span>Double Time</span>
-        </PerkImage>
+        {
+          data.map((perk, index) => {
+            let image: string;
 
-        <PerkImage>
-          <img src={OverkillPerk} alt="OverkillPerk" width="100px" height="50px" />
-          <span>Overkill</span>
-        </PerkImage>
+            switch (perk.type) {
+              case "Blue":
+                image = imageFromAssets(bluePerk.image);
+                break;
+              case "Red":
+                image = imageFromAssets(redPerk.image);
+                break;
+              case "Yellow":
+                image = imageFromAssets(yellowPerk.image);
+                break;
+            }
 
-        <PerkImage>
-          <img src={AmpedPerk} alt="AmpedPerk" width="100px" height="50px" />
-          <span>Amped</span>
-        </PerkImage>
+            return (
+              <PerkImage key={index}>
+                <img src={image} alt={perk.name} width="100px" height="50px" />
+                <span>{perk.name}</span>
+              </PerkImage>
+            )
+          })
+        }
       </PerkImageGroup>
     </Perk>
   );

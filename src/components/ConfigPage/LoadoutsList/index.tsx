@@ -11,21 +11,21 @@ import {
 } from './styles';
 
 interface IProps {
-  loadoutsNameList?: string[];
+  namesList?: string[];
 }
 
-const LoadoutsList: React.FC<IProps> = ({ loadoutsNameList }) => {
+const LoadoutsList: React.FC<IProps> = ({ namesList }) => {
   const [loadouts, setLoadouts] = useState<string[]>(['Loadout 1']);
+
+  useEffect(() => {
+    if (namesList && namesList.length > 0) {
+      setLoadouts([...namesList]);
+    }
+  }, [namesList]);
 
   const handleAddLoadout = () => {
     setLoadouts([...loadouts, `Loadout ${loadouts.length + 1}`]);
   };
-
-  useEffect(() => {
-    if (loadoutsNameList) {
-      setLoadouts([...loadoutsNameList]);
-    }
-  }, []);
 
   return (
     <Container>

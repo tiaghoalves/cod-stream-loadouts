@@ -29,9 +29,9 @@ TODO:
   ☐ Definir customização de loadout padrão
 
   Config Page:
-    - Criar layout para pagina de config da extensão @started(20-08-28 19:31)
     Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
-      - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
+    ☐ Criar layout para pagina de config da extensão
+    - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
 
       Loadouts:
         ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
@@ -39,15 +39,19 @@ TODO:
           ☐ Carregar informações do ConfigService
           ☐ Usar dados do ConfigService para alimentar os componentes (LoadoutList, LoadoutItems)
             Verificar se existe dados dos loadouts no ConfigService, caso contrário considerar usar json de loadout padrão (default_loadout.json)
+      
       LoadoutList:
         ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
-          Iniciar com apenas um loadout na lista por default
-        ☐ Construir objeto com os dados do Loadout
-        ☐ Persistir infos dos loadouts no Configuration Service
+          Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
+        ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
+      
       LoadoutItems:
+        ☐ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28)
+          Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
         ☐ Renderizar os items do loadout considernado os valores default 'default_loadout.json'
         ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
-        Incluir estados para os componentes considerando dados do json 'default_loadout.json':
+          Incluir estados para os componentes considerando dados do json 'default_loadout.json':
+  
       LoadoutItems(Selected):
         - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
         - Componentizar menu lateral com loadout selecionado (SelectedLoadout)

@@ -50,12 +50,12 @@ export const WeaponHeader = styled.div`
   }
 `;
 
-export const WeaponAttachSlots = styled.div`
+export const WeaponAttachSlots = styled.div<{ hasAttach: boolean }>`
   width: 16px;
   height: 16px;
   border-radius: 50%;
   border: 1px solid #000;
-  background: #9e9e02;
+  background: ${props => props.hasAttach ? '#9e9e02' : ''};
 `;
 
 export const AttachSlotsContainer = styled.div`

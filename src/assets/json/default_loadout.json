@@ -6,93 +6,96 @@
         "weapons": [
           {
             "name": "Grau 5.56",
-            "type": "primary",
-            "image": "./../../assets/images/weapons/GRAU.png",
+            "type": "Primary",
+            "image": "./weapons/Grau_556.png",
             "attachments": [
               {
                 "category": "Muzzle",
                 "name": "Tactical Suppressor",
-                "image": "./../../assets/images/attachments/muzzle/tacticalSuppressor.png"
+                "image": "./attachments/muzzle/tacticalSuppressor.png"
               },
               {
                 "category": "Optic",
                 "name": "Integral Hibrida",
-                "image": "./../../assets/images/attachments/optic/integralHybrid.png"
+                "image": "./attachments/optic/integralHybrid.png"
               },
               {
                 "category": "Underbarrel",
                 "name": "Comando Foregrip",
-                "image": "./../../assets/images/attachments/underbarrel/comandoForegrip.png"
+                "image": "./attachments/underbarrel/comandoForegrip.png"
               },
               {
                 "category": "Ammunition",
                 "name": "60 Round Mags",
-                "image": "./../../assets/images/attachments/ammunition/60roundMags.png"
+                "image": "./attachments/ammunition/60roundMags.png"
               },
               {
                 "category": "Perks",
                 "name": "Sleight Of Hand",
-                "image": "./../../assets/images/attachments/perk/sleightOfHand.png"
+                "image": "./attachments/perk/sleightOfHand.png"
               }
             ]
           },
           {
             "name": "MP7",
-            "type": "secundary",
-            "image": "./../../assets/images/weapons/MP7.png",
+            "type": "Secundary",
+            "image": "./weapons/MP7.png",
             "attachments": [
               {
                 "category": "Muzzle",
                 "name": "Tactical Suppressor",
-                "image": "./../../assets/images/attachments/muzzle/tacticalSuppressor.png"
+                "image": "./attachments/muzzle/tacticalSuppressor.png"
               },
               {
                 "category": "Optic",
                 "name": "Integral Hibrida",
-                "image": "./../../assets/images/attachments/optic/integralHybrid.png"
+                "image": "./attachments/optic/integralHybrid.png"
               },
               {
                 "category": "Underbarrel",
                 "name": "Comando Foregrip",
-                "image": "./../../assets/images/attachments/underbarrel/comandoForegrip.png"
+                "image": "./attachments/underbarrel/comandoForegrip.png"
               },
               {
                 "category": "Ammunition",
                 "name": "60 Round Mags",
-                "image": "./../../assets/images/attachments/ammunition/60roundMags.png"
+                "image": "./attachments/ammunition/60roundMags.png"
               },
               {
                 "category": "Perks",
                 "name": "Sleight Of Hand",
-                "image": "./../../assets/images/attachments/perk/sleightOfHand.png"
+                "image": "./attachments/perk/sleightOfHand.png"
               }
             ]
           }
         ],
         "perks": [
           {
+            "type": "Blue",
             "name": "DoubleTime",
-            "image": "./../../assets/images/perks/DoubleTime.png"
+            "image": "./perks/Doubletime.png"
           },
           {
+            "type": "Red",
             "name": "Overkill",
-            "image": "./../../assets/images/perks/Overkill.png"
+            "image": "./perks/Overkill.png"
           },
           {
+            "type": "Yellow",
             "name": "Amped",
-            "image": "./../../assets/images/perks/Amped.png"
+            "image": "./perks/Amped.png"
           }
         ],
         "utilities": [
           {
-            "type": "lethal",
+            "type": "Lethal",
             "name": "Frag Grenade",
-            "image": "./../../assets/images/utilities/frag_grenade.png"
+            "image": "./utilities/frag_grenade.png"
           },
           {
-            "type": "tactical",
+            "type": "Tactical",
             "name": "Heartbeat Sensor",
-            "image": "./../../assets/images/utilities/heartbeat_sensor.png"
+            "image": "./utilities/heartbeat_sensor.png"
           }
         ]
       }

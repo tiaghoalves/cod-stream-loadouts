@@ -2,20 +2,29 @@ interface Window {
   Twitch: any;
 }
 
+Twitch = window.Twitch.ext || {};
+const Twitch = Twitch.ext;
+
 interface Attachment {
   name: string;
   category: string;
   image: string;
 }
 
+enum WeaponType {
+  Primary = 'Primary',
+  Secundary = 'Secundary'
+}
+
 interface Weapon {
   name: string;
   image: string;
-  type: string;
+  type: WeaponType;
   attachments: Attachment[];
 }
 
 interface Perk {
+  type: string;
   name: string;
   image: string;
 }
@@ -34,12 +43,9 @@ interface LoadoutItems {
 
 interface Loadout {
   name: string;
-  loadoutsItems: LoadoutItems[];
+  loadoutItems: LoadoutItems;
 }
 
 interface LoadoutsData {
   loadouts: Loadout[];
 }
-
-Twitch = window.Twitch.ext || {};
-const Twitch = Twitch.ext;

@@ -8,15 +8,18 @@ import { Container } from './styles';
 
 interface IProps {
   selected?: boolean;
+  loadout?: Loadout;
 }
 
-const LoadoutItems: React.FC<IProps> = ({ selected = false }) => {
+const LoadoutItems: React.FC<IProps> = ({ selected = false, loadout }) => {
+  const { loadoutItems } = loadout;
+  console.log('loadoutItems >', loadoutItems);
 
   return (
     <Container selected={selected}>
-      <Weapons selected={selected} />
-      <Perks />
-      <Utilities />
+      <Weapons selected={selected} data={loadoutItems.weapons} />
+      <Perks data={loadoutItems.perks} />
+      <Utilities data={loadoutItems.utilities} />
     </Container>
   );
 };
