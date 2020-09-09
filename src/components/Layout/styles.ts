@@ -5,7 +5,7 @@ const ContainerIsConfig = css`
   margin: 0 auto;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 580px;
+  width: 600px;
 `;
 
 export const Container = styled.div<{ isVisible: boolean, isConfig: boolean }> `
@@ -13,7 +13,7 @@ export const Container = styled.div<{ isVisible: boolean, isConfig: boolean }> `
   display: ${props => props.isVisible ? 'flex' : 'none'};
   position: relative;
   flex-direction: column;
-  max-width: 580px;
+  max-width: 600px;
   height: 650px;
   padding: 10px;
   background: #000000a6;

@@ -16,7 +16,7 @@ TODO:
     Usar assets do site https://cod.tracker.gg/
   ☐ Editar as imagens dos perks
     Transformar de .jpg para .png
-  ☐ Suporte para os idiomas
+  ☐ Suporte para os idiomas 'en' e 'pt-br'
     *Iniciar somente com ingles
     *Usar callback onContext do Twitch Helper filtrando pela propriedade 'language' para identificar qual idioma atual
     `js
@@ -30,9 +30,8 @@ TODO:
 
   Config Page:
     Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
-    ☐ Criar layout para pagina de config da extensão
+    - Criar layout para pagina de config da extensão
     - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
-
       Loadouts:
         ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
         ConfigurationService:

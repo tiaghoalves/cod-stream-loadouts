@@ -32,7 +32,7 @@ const ContainerDivSelected = css`
 export const Container = styled.div<{ selected: boolean }>`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 5px 0px;
   max-height: 100%;
 
