@@ -22,7 +22,6 @@ const Utilities: React.FC<IProps> = ({ selected = false, data }) => {
   const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
-      console.log(ref.current);
     }
   };
 

@@ -1,7 +1,8 @@
 import React from "react";
 
 import LoadoutItems from './../LoadoutItems';
-// import Attachment from './../Attachment';
+import SideMenuItems from './../SideMenuItems';
+import Attachment from './../../shared/Attachment';
 import defaultLoadoutData from './../../../assets/json/default_loadout.json';
 
 import {
@@ -16,7 +17,9 @@ const SelectedLoadout: React.FC = () => {
   return (
     <Container>
       <LoadoutItems selected={true} loadout={loadout} />
-      {/* <Attachment /> */}
+      <SideMenuItems>
+        <Attachment />
+      </SideMenuItems>
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import LoadoutItems from './../LoadoutItems';
-import Attachment from './../Attachment';
+import Attachment from './../../shared/Attachment';
 
 import {
   Container

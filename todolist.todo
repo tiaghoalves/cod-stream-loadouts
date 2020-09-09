@@ -32,7 +32,19 @@ TODO:
     Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
     - Criar layout para pagina de config da extensão
     - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
+      SelectedLoadout:
+        
       Loadouts:
+        ☐ Unificar SelectedLoadout e Loadouts
+          - Verificar parametros via URL para filtrar qual componente deve ser renderizado
+          - Se estiver em '/' deve mostrar:
+            <LoadoutsList namesList={loadouts.map((load) => load.name)} />
+            <LoadoutItems loadout={loadout} />
+          - Se estiver em '/loadout/:index' deve mostrar:
+            <LoadoutItems selected={true} loadout={loadout} />
+            <SideMenuItems>
+              <Attachment />
+            </SideMenuItems>
         ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
         ConfigurationService:
           ☐ Carregar informações do ConfigService

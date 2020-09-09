@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Container,
+  Title,
   AttachmentContainer,
   AttachmentDetail
 } from './styles';
@@ -14,8 +14,8 @@ import comandoForegrip from './../../../assets/images/attachments/underbarrel/co
 
 const Attachment: React.FC = () => {
   return (
-    <Container>
-      <h3>Attachments</h3>
+    <>
+      <Title>Attachments</Title>
 
       <AttachmentContainer>
         <img src={tacticalSuppressor} alt="Supressor Tatico"></img>
@@ -84,7 +84,7 @@ const Attachment: React.FC = () => {
           <span>Sleight Of Hand</span>
         </AttachmentDetail>
       </AttachmentContainer>
-    </Container>
+    </>
   );
 }
 
