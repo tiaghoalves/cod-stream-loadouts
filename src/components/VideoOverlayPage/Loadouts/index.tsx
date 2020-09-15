@@ -9,7 +9,6 @@ function Loadouts() {
   return (
     <Container>
       <LoadoutsList size={10} />
-
       <LoadoutItems />
     </Container>
   );

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { ReactNode } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
 import Header from './../Header';
-
 import { Container } from './styles';
 
 interface RouteMatchType {
@@ -10,14 +9,14 @@ interface RouteMatchType {
 }
 
 interface IProps {
-  children?: React.ReactNode;
-  hideButton?: React.ReactNode;
+  children?: ReactNode;
+  hideButton?: ReactNode;
   isVisible?: boolean;
   isConfig?: boolean;
 }
 
 const Layout: React.FC<IProps> = ({ children, isVisible = true, isConfig, hideButton }) => {
-  let match = useRouteMatch<RouteMatchType>('/Loadout/:index');
+  let match = useRouteMatch<RouteMatchType>('/loadout/:index');
 
   return (
     <>

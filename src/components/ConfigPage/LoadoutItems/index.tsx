@@ -13,7 +13,6 @@ interface IProps {
 
 const LoadoutItems: React.FC<IProps> = ({ selected = false, loadout }) => {
   const { loadoutItems } = loadout;
-  console.log('loadoutItems >', loadoutItems);
 
   return (
     <Container selected={selected}>

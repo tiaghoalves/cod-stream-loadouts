@@ -2,81 +2,78 @@ Call of Duty - Stream Loadouts
 - Criar/Procurar um logo
 Refs:
   icons svg: https://feathericons.com/
+✔ Configurar typescript no projeto @started(20-08-24 14:15) @done(20-08-24 17:11) @lasted(2h56m59s)
+✔ Readicionar as dependencias ao package.json @started(20-08-24 17:11) @done(20-08-24 17:49) @lasted(38m14s)
+✔ Adicionar hot loading usado webpack @done(20-08-27 18:18)
+  ref: https://gaearon.github.io/react-hot-loader/getstarted/
+  Added --watch --watch-poll to webpack-dev-server cli tool
+✔ Tratar imports dos svgs @done(20-08-28 17:57)
+  ref: https://stackoverflow.com/questions/44717164/unable-to-import-svg-files-in-typescript
+  considerar usar: https://github.com/jhamlet/svg-react-loader
+☐ Baixar as imagens para os attachments das armas
+  Usar assets do site https://cod.tracker.gg/
+☐ Editar as imagens dos perks
+  Transformar de .jpg para .png
+☐ Suporte para os idiomas 'en' e 'pt-br'
+  *Iniciar somente com ingles
+  *Usar callback onContext do Twitch Helper filtrando pela propriedade 'language' para identificar qual idioma atual
+  `js
+    function contextUpdate(context: any, delta: any) {
+      // Considerar: Filtrar por alguma prop do context para usar quando for alterada (ex: 'language' => 'en' || 'pt-br')
+      if (delta.includes('theme')) { }
+    }
+  `
+  - Inicialmente traduções em 'pt-br' e 'en'
+☐ Definir customização de loadout padrão
 
-TODO:
-  ✔ Configurar typescript no projeto @started(20-08-24 14:15) @done(20-08-24 17:11) @lasted(2h56m59s)
-  ✔ Readicionar as dependencias ao package.json @started(20-08-24 17:11) @done(20-08-24 17:49) @lasted(38m14s)
-  ✔ Adicionar hot loading usado webpack @done(20-08-27 18:18)
-    ref: https://gaearon.github.io/react-hot-loader/getstarted/
-    Added --watch --watch-poll to webpack-dev-server cli tool
-  ✔ Tratar imports dos svgs @done(20-08-28 17:57)
-    ref: https://stackoverflow.com/questions/44717164/unable-to-import-svg-files-in-typescript
-    considerar usar: https://github.com/jhamlet/svg-react-loader
-  ☐ Baixar as imagens para os attachments das armas
-    Usar assets do site https://cod.tracker.gg/
-  ☐ Editar as imagens dos perks
-    Transformar de .jpg para .png
-  ☐ Suporte para os idiomas 'en' e 'pt-br'
-    *Iniciar somente com ingles
-    *Usar callback onContext do Twitch Helper filtrando pela propriedade 'language' para identificar qual idioma atual
-    `js
-      function contextUpdate(context: any, delta: any) {
-        // Considerar: Filtrar por alguma prop do context para usar quando for alterada (ex: 'language' => 'en' || 'pt-br')
-        if (delta.includes('theme')) { }
-      }
-    `
-    - Inicialmente traduções em 'pt-br' e 'en'
-  ☐ Definir customização de loadout padrão
-
-  Config Page:
-    Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
-    - Criar layout para pagina de config da extensão
-    - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
-      SelectedLoadout:
-        
-      Loadouts:
-        ☐ Unificar SelectedLoadout e Loadouts
-          - Verificar parametros via URL para filtrar qual componente deve ser renderizado
-          - Se estiver em '/' deve mostrar:
-            <LoadoutsList namesList={loadouts.map((load) => load.name)} />
-            <LoadoutItems loadout={loadout} />
-          - Se estiver em '/loadout/:index' deve mostrar:
-            <LoadoutItems selected={true} loadout={loadout} />
-            <SideMenuItems>
-              <Attachment />
-            </SideMenuItems>
-        ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
-        ConfigurationService:
-          ☐ Carregar informações do ConfigService
-          ☐ Usar dados do ConfigService para alimentar os componentes (LoadoutList, LoadoutItems)
-            Verificar se existe dados dos loadouts no ConfigService, caso contrário considerar usar json de loadout padrão (default_loadout.json)
+Config Page:
+  Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
+  - Criar layout para pagina de config da extensão
+  - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
+    SelectedLoadout:
       
-      LoadoutList:
-        ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
-          Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
-        ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
-      
-      LoadoutItems:
-        ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
-          Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
-        ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
-        ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
-          Incluir estados para os componentes considerando dados do json 'default_loadout.json':
-  
-      LoadoutItems(Selected):
-        - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
-        - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
-          - Generalizar mais o styled-component 'AttachmentsContainer' quebrando em partes menores mais básicas
-          - Usar generalização do comp 'AttachmentsContainer' como base na pagina de Config.html
-
-  Video Overlay:
+    Loadouts:
+      ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
+      ☐ Unificar SelectedLoadout e Loadouts
+        - Verificar parametros via URL para filtrar qual componente deve ser renderizado
+        - Se estiver em '/' deve mostrar:
+          <LoadoutsList namesList={loadouts.map((load) => load.name)} />
+          <LoadoutItems loadout={loadout} />
+        - Se estiver em '/loadout/:index' deve mostrar:
+          <LoadoutItems selected={true} loadout={loadout} />
+          <SideMenuItems>
+            <Attachment />
+          </SideMenuItems>
+      ConfigurationService:
+        ☐ Carregar informações do ConfigService
+        ☐ Usar dados do ConfigService para alimentar os componentes (LoadoutList, LoadoutItems)
+          Verificar se existe dados dos loadouts no ConfigService, caso contrário considerar usar json de loadout padrão (default_loadout.json)
+    
+    LoadoutList:
+      ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
+        Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
+      ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
+    
     LoadoutItems:
-      ☐ Efeitos de hover na lista de loadouts para alterar os itens mostrados
-      - Quebrar em componentes menores:
-        ☐ Adapatar para renderizar de forma dinamica considerando os dados do json
-        ✔ Weapons @done(20-09-03 23:11)
-        ✔ Perks @done(20-09-03 23:11)
-        ✔ Utilities @done(20-09-03 23:11)
+      ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
+        Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
+      ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
+      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
+        Incluir estados para os componentes considerando dados do json 'default_loadout.json':
+
     LoadoutItems(Selected):
-      ☐ Efeitos de hover na lista de items do loadouts para alterar os attachments das armas (Primaria e secundaria)
-  
+      - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
+      - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
+        - Generalizar mais o styled-component 'AttachmentsContainer' quebrando em partes menores mais básicas
+        - Usar generalização do comp 'AttachmentsContainer' como base na pagina de Config.html
+
+Video Overlay:
+  LoadoutItems:
+    ☐ Efeitos de hover na lista de loadouts para alterar os itens mostrados
+    - Quebrar em componentes menores:
+      ☐ Adapatar para renderizar de forma dinamica considerando os dados do json
+      ✔ Weapons @done(20-09-03 23:11)
+      ✔ Perks @done(20-09-03 23:11)
+      ✔ Utilities @done(20-09-03 23:11)
+  LoadoutItems(Selected):
+    ☐ Efeitos de hover na lista de items do loadouts para alterar os attachments das armas (Primaria e secundaria)

@@ -35,7 +35,7 @@ const VideoOverlay: React.FC = () => {
           <Route exact path="/">
             <Loadouts />
           </Route>
-          <Route path="/Loadout/:index">
+          <Route path="/loadout/:index">
             <SelectedLoadout />
           </Route>
         </Switch>
