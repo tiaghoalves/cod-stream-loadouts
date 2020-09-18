@@ -3,9 +3,7 @@ import React from "react";
 import LoadoutItems from './../LoadoutItems';
 import Attachment from './../../shared/Attachment';
 
-import {
-  Container
-} from "./styles";
+import { Container } from "./styles";
 
 function SelectedLoadout() {
   return (

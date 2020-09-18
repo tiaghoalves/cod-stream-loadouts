@@ -4,6 +4,7 @@ import { Container } from './styles';
 
 const SideMenuItems: React.FC = ({ children }) => {
 
+
   return (
     <Container>
       {children}

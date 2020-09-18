@@ -1,4 +1,4 @@
-Call of Duty - Stream Loadouts
+- Call of Duty - Stream Loadouts
 - Criar/Procurar um logo
 Refs:
   icons svg: https://feathericons.com/
@@ -27,14 +27,11 @@ Refs:
 ☐ Definir customização de loadout padrão
 
 Config Page:
-  Disponibilizar ao streamer uma interface fácil e simples de usar para configurar/montar os loadouts da stream.
   - Criar layout para pagina de config da extensão
   - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
-    SelectedLoadout:
-      
     Loadouts:
       ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
-      ☐ Unificar SelectedLoadout e Loadouts
+      ✔ Unificar SelectedLoadout e Loadouts @done(20-09-16 14:14)
         - Verificar parametros via URL para filtrar qual componente deve ser renderizado
         - Se estiver em '/' deve mostrar:
           <LoadoutsList namesList={loadouts.map((load) => load.name)} />
@@ -58,7 +55,7 @@ Config Page:
       ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
         Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
       ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
-      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts
+      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-17 17:05)
         Incluir estados para os componentes considerando dados do json 'default_loadout.json':
 
     LoadoutItems(Selected):
@@ -68,6 +65,8 @@ Config Page:
         - Usar generalização do comp 'AttachmentsContainer' como base na pagina de Config.html
 
 Video Overlay:
+  ☐ Criar um Routes
+  ☐ Adaptar para usar o SideMenuItems assim corrir os alinhamentos do items do menu lateral quando loadout estiver selecionado
   LoadoutItems:
     ☐ Efeitos de hover na lista de loadouts para alterar os itens mostrados
     - Quebrar em componentes menores:

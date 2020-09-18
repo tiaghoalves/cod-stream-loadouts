@@ -1,27 +1,24 @@
 import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import Loadouts from './../Loadouts';
-
-interface RouteMatchType {
-  index: string;
-}
+import Loadouts from './../../Loadouts';
+import { RouteMatchType } from './../Types';
 
 interface IProps {
   loadoutsData?: LoadoutsData;
 }
 
-const RootPage: React.FC<IProps> = ({ loadoutsData }) => {
+const RoutesContainer: React.FC<IProps> = (props) => {
   let routeMatchSelected = useRouteMatch<RouteMatchType>('/loadout/:index');
   let routeMatchLoadouts = useRouteMatch<RouteMatchType>('/');
 
   return (
     <Loadouts
-      loadoutsData={loadoutsData}
+      {...props}
       matchSelected={routeMatchSelected}
       matchLoadouts={routeMatchLoadouts}
     />
   );
 }
 
-export default RootPage;
+export default RoutesContainer;

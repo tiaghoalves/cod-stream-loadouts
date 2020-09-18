@@ -3,14 +3,11 @@ import { match } from 'react-router-dom';
 
 import LoadoutsList from './../LoadoutsList';
 import LoadoutItems from './../LoadoutItems';
-import SideMenuItems from './../SideMenuItems';
+import SideMenuItems from '../../shared/SideMenuItems';
 import Attachment from './../../shared/Attachment';
+import { RouteMatchType } from './../Routes/Types';
 
 import { Container } from './styles';
-
-interface RouteMatchType {
-  index: string;
-}
 
 interface IProps {
   loadoutsData?: LoadoutsData;
@@ -19,8 +16,8 @@ interface IProps {
 }
 
 const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected }) => {
-  let isSelected: boolean = (matchSelected && matchSelected.isExact) ? true : false;
-  let isLoadouts: boolean = (matchLoadouts && matchLoadouts.isExact) ? true : false;
+  const isSelected = (matchSelected && matchSelected.isExact) ? true : false;
+  const isLoadouts = (matchLoadouts && matchLoadouts.isExact) ? true : false;
   const { loadouts } = loadoutsData;
   let namesList: string[];
   let loadout: Loadout;
@@ -50,21 +47,6 @@ const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected
           </>
         )
       }
-
-      {/*
-
-      {{
-        if(matchSelected && matchSelected.isExact) {
-          return (
-            <>
-              <LoadoutItems selected={true} loadout={loadout} />
-              <SideMenuItems>
-                <Attachment />
-              </SideMenuItems>
-            </>
-          );
-        }
-      }} */}
     </Container>
   );
 }

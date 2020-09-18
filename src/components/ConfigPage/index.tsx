@@ -1,9 +1,9 @@
 import React from 'react';
-import { MemoryRouter as Router, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { MemoryRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
 import Layout from './../Layout';
-import RootPage from './RootPage';
+import RoutesContainer from './Routes/Container';
 import defaultLoadoutData from './../../assets/json/default_loadout.json';
 
 const ConfigPage: React.FC = () => {
@@ -18,10 +18,10 @@ const ConfigPage: React.FC = () => {
       <Layout isConfig={true}>
         <Switch>
           <Route exact path="/">
-            <RootPage loadoutsData={loadoutsData} />
+            <RoutesContainer loadoutsData={loadoutsData} />
           </Route>
           <Route path="/loadout/:index">
-            <RootPage loadoutsData={loadoutsData} />
+            <RoutesContainer loadoutsData={loadoutsData} />
           </Route>
         </Switch>
       </Layout>
