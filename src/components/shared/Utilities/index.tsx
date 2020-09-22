@@ -1,4 +1,5 @@
-import React, { useRef, RefObject } from 'react';
+import React, { useRef, RefObject, useContext } from 'react';
+import { Context } from './../../ConfigPage/Context';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
 
@@ -14,14 +15,19 @@ interface IProps {
 }
 
 const Utilities: React.FC<IProps> = ({ selected = false, data }) => {
+  const { handleSideMenuContent } = useContext(Context);
   const refLethal = useRef<HTMLDivElement>(null);
   const refTactical = useRef<HTMLDivElement>(null);
   const lethal = data.find(util => util.type === "Lethal");
   const tactical = data.find(util => util.type === "Tactical");
 
-  const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
+  const handleOnChange = (ref: RefObject<HTMLDivElement>, utility: Utility) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
+
+      handleSideMenuContent({
+        utility: utility
+      });
     }
   };
 
@@ -36,7 +42,7 @@ const Utilities: React.FC<IProps> = ({ selected = false, data }) => {
               key={index}
               selected={selected}
               ref={ref}
-              onMouseEnter={() => handleOnChange(ref)}
+              onMouseEnter={() => handleOnChange(ref, utility)}
               tabIndex={index}
             >
               <UtilityDetails>

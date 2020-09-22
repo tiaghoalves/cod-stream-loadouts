@@ -28,7 +28,7 @@ Refs:
 
 Config Page:
   - Criar layout para pagina de config da extensão
-  - Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
+    Visão de montagem dos loadouts usando como refenrencia o que foi feito em VideoOverlay aproveitando componentes como 'LoadoutList' e 'LoadoutItem'
     Loadouts:
       ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
       ✔ Unificar SelectedLoadout e Loadouts @done(20-09-16 14:14)
@@ -49,14 +49,15 @@ Config Page:
     LoadoutList:
       ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
         Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
-      ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
+      Configuration Service:
+        ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
     
     LoadoutItems:
       ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
         Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
       ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
       ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-17 17:05)
-        Incluir estados para os componentes considerando dados do json 'default_loadout.json':
+        Incluir estados para os componentes considerando dados do json 'default_loadout.json'
 
     LoadoutItems(Selected):
       - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
@@ -64,6 +65,12 @@ Config Page:
         - Generalizar mais o styled-component 'AttachmentsContainer' quebrando em partes menores mais básicas
         - Usar generalização do comp 'AttachmentsContainer' como base na pagina de Config.html
 
+    SideMenuItems:
+      ☐ Criar menu para os Perks
+      ☐ Criar menu para as Utilities
+      Attachments:
+        ☐ Permitir edição dos attachments do loadout
+    
 Video Overlay:
   ☐ Criar um Routes
   ☐ Adaptar para usar o SideMenuItems assim corrir os alinhamentos do items do menu lateral quando loadout estiver selecionado

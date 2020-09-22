@@ -5,7 +5,7 @@ import Loadouts from './../../Loadouts';
 import { RouteMatchType } from './../Types';
 
 interface IProps {
-  loadoutsData?: LoadoutsData;
+  loadoutsData: LoadoutsData;
 }
 
 const RoutesContainer: React.FC<IProps> = (props) => {

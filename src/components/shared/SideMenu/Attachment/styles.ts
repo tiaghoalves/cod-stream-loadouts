@@ -1,23 +1,16 @@
 import styled from 'styled-components';
 
-export const Title = styled.h3`
-  font-family: 'Roboto', sans-serif;
-  color: var(--subtitle-color);
-  text-shadow: 0px 1px 4px #000;
-  margin: 5px auto 0px auto;
-`;
-
-export const AttachmentContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 250px;
+  width: 260px;
   height: 50px;
   background: #1d1d1d;
   position: relative;
-  margin: 5px;
-  padding: 0 5px;
+  margin: 5px 0px;
+  padding: 0px 2px;
 
   img {
     height: 100%;
@@ -26,7 +19,7 @@ export const AttachmentContainer = styled.div`
   }
 `;
 
-export const AttachmentDetail = styled.div`
+export const Detail = styled.div`
   display: flex;
   flex-direction: column;
 

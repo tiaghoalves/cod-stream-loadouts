@@ -1,4 +1,5 @@
-import React, { useRef, RefObject } from 'react';
+import React, { useRef, RefObject, useContext } from 'react';
+import { Context } from './../../ConfigPage/Context';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
 
@@ -10,19 +11,24 @@ import {
 } from './styles';
 
 interface IProps {
-  selected?: boolean;
   data?: Weapon[];
+  selected?: boolean;
 }
 
 const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
+  const { handleSideMenuContent } = useContext(Context);
   const primaryRef = useRef<HTMLDivElement>(null);
   const secundaryRef = useRef<HTMLDivElement>(null);
   const primaryWeapon = data.find(weapon => weapon.type === 'Primary');
   const secundaryWeapon = data.find(weapon => weapon.type === 'Secundary');
 
-  const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
+  const handleOnChange = (ref: RefObject<HTMLDivElement>, weapon: Weapon) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
+
+      handleSideMenuContent({
+        weapon: weapon
+      });
     }
   };
 
@@ -38,7 +44,7 @@ const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
               key={index}
               selected={selected}
               ref={ref}
-              onMouseEnter={() => handleOnChange(ref)}
+              onMouseEnter={() => handleOnChange(ref, weapon)}
               tabIndex={index}
             >
               <WeaponHeader>

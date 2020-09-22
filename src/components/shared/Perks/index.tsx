@@ -1,4 +1,5 @@
-import React, { useRef, RefObject } from 'react';
+import React, { useRef, RefObject, useContext } from 'react';
+import { Context } from './../../ConfigPage/Context';
 
 import {
   Perk,
@@ -14,6 +15,7 @@ interface IProps {
 }
 
 const Perks: React.FC<IProps> = ({ selected = false, data }) => {
+  const { handleSideMenuContent } = useContext(Context);
   const ref = useRef<HTMLDivElement>(null);
   const bluePerk = data.find(perk => perk.type === "Blue");
   const redPerk = data.find(perk => perk.type === "Red");
@@ -22,6 +24,10 @@ const Perks: React.FC<IProps> = ({ selected = false, data }) => {
   const handleOnChange = (ref: RefObject<HTMLDivElement>) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
+
+      handleSideMenuContent({
+        perks: data
+      });
     }
   };
 
