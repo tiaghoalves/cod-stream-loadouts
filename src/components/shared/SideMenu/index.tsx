@@ -13,24 +13,33 @@ interface IProps {
   }
 }
 
+interface MenuContentProps {
+  attachments?: Attachment[];
+  perks?: Perk[];
+  utility?: Utility;
+}
+
 const SideMenu: React.FC<IProps> = ({ data }) => {
   const [menuTitle, setMenuTitle] = useState<string>("");
   const { attachments, perks, utility } = data;
-  let menuContent: Attachment[] = attachments;
+  let menuContent: MenuContentProps = { attachments };
 
   useEffect(() => {
     let title: string;
+
     if (attachments) {
       title = "Attachments";
-      menuContent = attachments;
+      menuContent = { attachments };
     }
 
     if (utility) {
       title = "Utility";
+      menuContent = { utility };
     }
 
     if (perks) {
       title = "Perks";
+      menuContent = { perks };
     }
 
     setMenuTitle(title);
@@ -41,7 +50,10 @@ const SideMenu: React.FC<IProps> = ({ data }) => {
       <SideMenuContent title={menuTitle}>
         {
           attachments && (
-            <SideMenuAttachment data={menuContent} />
+            <SideMenuAttachment data={menuContent.attachments} />
+          ) ||
+          utility && (
+            <SideMenuUtilities data={menuContent.utility} />
           )
         }
       </SideMenuContent>
