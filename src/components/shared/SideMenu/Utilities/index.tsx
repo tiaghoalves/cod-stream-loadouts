@@ -1,7 +1,5 @@
 import React from 'react';
 
-// const imageFromAssets = require.context('./../../../../assets/images', true);
-
 // import { } from './styles';
 
 interface IProps {

@@ -15,9 +15,24 @@
                 "image": "./attachments/muzzle/tacticalSuppressor.png"
               },
               {
+                "category": "Barrel",
+                "name": "",
+                "image": ""
+              },
+              {
+                "category": "Laser",
+                "name": "",
+                "image": ""
+              },
+              {
                 "category": "Optic",
                 "name": "Integral Hibrida",
                 "image": "./attachments/optic/integralHybrid.png"
+              },
+              {
+                "category": "Stock",
+                "name": "",
+                "image": ""
               },
               {
                 "category": "Underbarrel",
@@ -28,6 +43,11 @@
                 "category": "Ammunition",
                 "name": "60 Round Mags",
                 "image": "./attachments/ammunition/60roundMags.png"
+              },
+              {
+                "category": "Rear Grip",
+                "name": "",
+                "image": ""
               },
               {
                 "category": "Perks",
@@ -47,9 +67,24 @@
                 "image": "./attachments/muzzle/tacticalSuppressor.png"
               },
               {
+                "category": "Barrel",
+                "name": "",
+                "image": ""
+              },
+              {
+                "category": "Laser",
+                "name": "Tac Laser",
+                "image": "./attachments/laser/tacLaser.png"
+              },
+              {
                 "category": "Optic",
-                "name": "Integral Hibrida",
-                "image": "./attachments/optic/integralHybrid.png"
+                "name": "",
+                "image": ""
+              },
+              {
+                "category": "Stock",
+                "name": "",
+                "image": ""
               },
               {
                 "category": "Underbarrel",
@@ -60,6 +95,11 @@
                 "category": "Ammunition",
                 "name": "60 Round Mags",
                 "image": "./attachments/ammunition/60roundMags.png"
+              },
+              {
+                "category": "Rear Grip",
+                "name": "",
+                "image": ""
               },
               {
                 "category": "Perks",

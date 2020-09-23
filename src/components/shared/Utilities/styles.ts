@@ -1,16 +1,6 @@
 import styled, { css } from 'styled-components';
+import { ItemSelected, ItemSelectedEffect } from './../styles';
 
-const UtilitySelected = css`
-  :hover, :active, :focus {
-    cursor: pointer;
-    background: #282828;
-    text-shadow: 2px 2px 5px #000;
-    border-top: 1px solid #7AE1EA;
-    transition: background, text-shadow, border-top ease 1s;
-  }
-`;
-
-// Utilities
 export const Utility = styled.div.attrs((props) => {
   return ({ tabIndex: props.tabIndex })
 }) <{ selected: boolean }>`
@@ -29,7 +19,7 @@ export const Utility = styled.div.attrs((props) => {
     text-shadow: 0px 1px 4px #000;
   }
 
-  ${props => props.selected ? UtilitySelected : ''};
+  ${props => props.selected ? ItemSelectedEffect : ''};
 `;
 
 export const UtilityImage = styled.div`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Weapons from './../../shared/Weapons';
 import Perks from './../../shared/Perks';
@@ -16,7 +16,10 @@ const LoadoutItems: React.FC<IProps> = ({ selected = false, loadout }) => {
 
   return (
     <Container selected={selected}>
-      <Weapons selected={selected} data={loadoutItems.weapons} />
+      <Weapons
+        selected={selected}
+        data={loadoutItems.weapons}
+      />
       <Perks selected={selected} data={loadoutItems.perks} />
       <Utilities selected={selected} data={loadoutItems.utilities} />
     </Container>

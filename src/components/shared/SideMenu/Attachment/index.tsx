@@ -16,11 +16,17 @@ const SideMenuAttachment: React.FC<IProps> = ({ data }) => {
     <>
       {
         data.map((attach, index) => {
-          const image = imageFromAssets(attach.image);
+          let image: string;
+          if (attach.image !== "") {
+            image = imageFromAssets(attach.image);
+          }
 
           return (
             <Container key={index}>
-              <img src={image} alt={attach.name}></img>
+              {
+                (image && image !== "") &&
+                (<img src={image} alt={attach.name}></img>)
+              }
               <Detail>
                 <h5>{attach.category}</h5>
                 <span>{attach.name}</span>

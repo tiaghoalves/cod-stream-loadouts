@@ -28,7 +28,6 @@ const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected
   const loadout: Loadout = loadouts[0];
   const namesList: string[] = loadouts.map((load) => load.name);
   const defaultAttachments = loadout.loadoutItems.weapons[0].attachments;
-
   const [sideMenuData, setSideMenuData] = useState<SideMenuData>({
     attachments: defaultAttachments,
   });
@@ -60,9 +59,7 @@ const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected
             <LoadoutsList namesList={namesList} />
             <LoadoutItems loadout={loadout} />
           </>
-        )
-      }
-      {
+        ) ||
         isSelected && (
           <Context.Provider value={{ handleSideMenuContent }}>
             <LoadoutItems loadout={loadout} selected={true} />

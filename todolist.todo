@@ -2,11 +2,12 @@
 - Criar/Procurar um logo
 Refs:
   icons svg: https://feathericons.com/
+  Config webpack ref carregamento de imagem: https://webpack.js.org/loaders/file-loader/#name)
 ✔ Configurar typescript no projeto @started(20-08-24 14:15) @done(20-08-24 17:11) @lasted(2h56m59s)
 ✔ Readicionar as dependencias ao package.json @started(20-08-24 17:11) @done(20-08-24 17:49) @lasted(38m14s)
 ✔ Adicionar hot loading usado webpack @done(20-08-27 18:18)
   ref: https://gaearon.github.io/react-hot-loader/getstarted/
-  Added --watch --watch-poll to webpack-dev-server cli tool
+  added --watch --watch-poll to webpack-dev-server cli tool
 ✔ Tratar imports dos svgs @done(20-08-28 17:57)
   ref: https://stackoverflow.com/questions/44717164/unable-to-import-svg-files-in-typescript
   considerar usar: https://github.com/jhamlet/svg-react-loader
@@ -47,29 +48,31 @@ Config Page:
           Verificar se existe dados dos loadouts no ConfigService, caso contrário considerar usar json de loadout padrão (default_loadout.json)
     
     LoadoutList:
-      ✔ Adicionar loadouts de forma incremental @done(20-09-02 20:35)
-        Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
+      Iniciar com apenas um loadout na lista por default usando customização do 'default_loadout.json'
       Configuration Service:
         ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
     
     LoadoutItems:
-      ✔ Corrigir carregamento das imagens das armas, perks, utilities @started(20-09-04 23:28) @done(20-09-07 16:42) @lasted(2d17h14m6s)
-        Talvez passar todas as imagens para pasta ./public (Revisar config webpack ref: https://webpack.js.org/loaders/file-loader/#name)
-      ✔ Renderizar os items do loadout considernado os valores default 'default_loadout.json' @done(20-09-07 16:42)
-      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-17 17:05)
-        Incluir estados para os componentes considerando dados do json 'default_loadout.json'
-
-    LoadoutItems(Selected):
       - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
       - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
         - Generalizar mais o styled-component 'AttachmentsContainer' quebrando em partes menores mais básicas
         - Usar generalização do comp 'AttachmentsContainer' como base na pagina de Config.html
+      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-17 17:05)
+        Incluir estados para os componentes considerando dados do json 'default_loadout.json'
+      Weapons, Utilities, Perks:
+        ✔ Fazer com que o focus em cada div referente ao item do loadout continue com o efeito de hover/selected @started(20-09-22 22:30) @done(20-09-22 23:31) @lasted(1h1m32s)
+        ☐ Replicar comportamento de 'Weapons' referente ao focus e onClick para 'Perks' e 'Utilities'
 
     SideMenuItems:
       ☐ Criar menu para os Perks
-      ☐ Criar menu para as Utilities
-      Attachments:
+      ☐ Criar menu para as Utilities @started(20-09-21 21:18)
+      Perks:
+        ☐ Permitir edição dos perks do loadout
+      Utilities:
+        ☐ Permitir edição dos utilities do loadout
+      Attachments (Edit):
         ☐ Permitir edição dos attachments do loadout
+        ☐ Mostrar todas as opções de tipos para cada attachments possível (assim como in game) exibindo somente as imagens e labels conforme configurado na arma
     
 Video Overlay:
   ☐ Criar um Routes

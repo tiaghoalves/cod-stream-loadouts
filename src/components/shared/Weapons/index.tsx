@@ -1,4 +1,4 @@
-import React, { useRef, RefObject, useContext } from 'react';
+import React, { useRef, RefObject, useContext, useEffect, useState } from 'react';
 import { Context } from './../../ConfigPage/Context';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
@@ -13,38 +13,55 @@ import {
 interface IProps {
   data?: Weapon[];
   selected?: boolean;
+  onClick?: () => void;
 }
 
-const Weapons: React.FC<IProps> = ({ selected = false, data }) => {
+const Weapons: React.FC<IProps> = ({ data, selected = false }) => {
   const { handleSideMenuContent } = useContext(Context);
   const primaryRef = useRef<HTMLDivElement>(null);
   const secundaryRef = useRef<HTMLDivElement>(null);
   const primaryWeapon = data.find(weapon => weapon.type === 'Primary');
   const secundaryWeapon = data.find(weapon => weapon.type === 'Secundary');
+  const [primaryClicked, setPrimaryClicked] = useState(false);
+  const [secundaryClicked, setSecundaryClicked] = useState(false);
 
   const handleOnChange = (ref: RefObject<HTMLDivElement>, weapon: Weapon) => {
-    if (selected && ref !== null && ref.current) {
+    if (ref !== null && ref.current) {
       ref.current.focus();
+    }
 
-      handleSideMenuContent({
-        weapon: weapon
-      });
+    if (!primaryClicked && !secundaryClicked) {
+      handleSideMenuContent({ weapon });
     }
   };
+
+  const handleOnClick = (isPrimary: boolean, weapon: Weapon) => {
+    if (isPrimary) {
+      setPrimaryClicked(true);
+      setSecundaryClicked(false);
+    } else {
+      setPrimaryClicked(false);
+      setSecundaryClicked(true);
+    }
+
+    handleSideMenuContent({ weapon });
+  }
 
   return (
     <>
       {
         data.map((weapon, index) => {
-          const ref = weapon.type === 'Primary' ? primaryRef : secundaryRef;
+          const ref = (weapon.type === 'Primary') ? primaryRef : secundaryRef;
           const image = imageFromAssets(weapon.type === 'Primary' ? primaryWeapon.image : secundaryWeapon.image);
 
           return (
             <Weapon
               key={index}
+              isClicked={(weapon.type === 'Primary') ? primaryClicked : secundaryClicked}
               selected={selected}
               ref={ref}
               onMouseEnter={() => handleOnChange(ref, weapon)}
+              onClick={() => handleOnClick((weapon.type === 'Primary'), weapon)}
               tabIndex={index}
             >
               <WeaponHeader>
