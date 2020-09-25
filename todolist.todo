@@ -44,7 +44,7 @@ Config Page:
     Loadouts:
       ✔ Usar json de loadout padrão para carregar os loadouts @done(20-09-04 18:21)
       ✔ Unificar SelectedLoadout e Loadouts @done(20-09-16 14:14)
-        - Verificar parametros via URL para filtrar qual componente deve ser renderizado
+        Verificar parametros via URL para filtrar qual componente deve ser renderizado
       ConfigurationService:
         ☐ Carregar informações do ConfigService
         ☐ Usar dados do ConfigService para alimentar os componentes (LoadoutList, LoadoutItems)
@@ -56,16 +56,12 @@ Config Page:
         ☐ Construir objeto com os dados do Loadout e persistir infos dos loadouts no Configuration Service
     
     LoadoutItems:
-      - Permitir escolher um dos items do loadout (Primaria, secundaria, vantagem, letal, tatico) apresentando no componente
-      - Componentizar menu lateral com loadout selecionado (SelectedLoadout)
-      ☐ Quebrar os componentes de Weapons, Perks e Utilities para dentro de LoadoutItems
-        - Continuar desestruração apartir das Weapons
-      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-17 17:05)
+      ☐ Quebrar os componentes de Weapons, Perks e Utilities para dentro de LoadoutItems @started(20-09-25 19:05)
+        ☐ Continuar desestruração apartir das Weapons @started(20-09-25 19:05)
+          WIP: apply Weapon changes to Perks and Utilities
+          Add comp behavior to Weapon and LoadoutItems
+      ☐ Alterar a visualização dos items conforme evento de hover sobre os loadouts @started(20-09-25 19:05)
         Incluir estados para os componentes considerando dados do json 'default_loadout.json'
-
-      Weapons, Utilities, Perks:
-        ✔ Fazer com que o focus em cada div referente ao item do loadout continue com o efeito de hover/selected @started(20-09-22 22:30) @done(20-09-22 23:31) @lasted(1h1m32s)
-        ✘ Replicar comportamento de 'Weapons' referente ao focus e onClick para 'Perks' e 'Utilities' @cancelled(20-09-23 19:17)
 
     SideMenuItems:
       ☐ Criar menu para os Perks

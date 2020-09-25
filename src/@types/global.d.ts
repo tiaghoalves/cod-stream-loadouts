@@ -11,11 +11,6 @@ interface Attachment {
   image: string;
 }
 
-enum WeaponType {
-  Primary = 'Primary',
-  Secundary = 'Secundary'
-}
-
 interface Weapon {
   name: string;
   image: string;
@@ -31,7 +26,7 @@ interface Perk {
 
 interface Utility {
   name: string;
-  type: string;
+  type: UtilityType;
   image: string;
 }
 
@@ -48,4 +43,11 @@ interface Loadout {
 
 interface LoadoutsData {
   loadouts: Loadout[];
+}
+
+interface LoadoutItemType {
+  tabIndex: number,
+  item: Weapon | Perk[] | Utility,
+  image: string,
+  ref: RefObject<HTMLDivElement>,
 }

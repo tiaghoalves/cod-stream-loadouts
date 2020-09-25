@@ -2,9 +2,9 @@ import React, { useState, RefObject, useContext, useRef } from 'react';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
 import { Context, MenuContentType } from './../Context';
-import Weapon, { WeaponType } from '../../shared/Weapon';
+import Weapon from '../../shared/Weapon';
 import Perks from './../../shared/Perks';
-import Utilities from './../../shared/Utilities';
+import Utility from './../../shared/Utility';
 
 import { Container } from './styles';
 
@@ -27,44 +27,58 @@ const LoadoutItems: React.FC<IProps> = ({ selected = false, items }) => {
   const { handleSideMenuContent } = useContext(Context);
   const primaryWeapon = weapons.find(weapon => weapon.type === "Primary");
   const secundaryWeapon = weapons.find(weapon => weapon.type === "Secundary");
+  const lethal = utilities.find(utility => utility.type === "Lethal");
+  const tactical = utilities.find(utility => utility.type === "Tactical");
   const primaryRef = useRef<HTMLDivElement>();
   const secundaryRef = useRef<HTMLDivElement>();
+  const lethalRef = useRef<HTMLDivElement>();
+  const tacticalRef = useRef<HTMLDivElement>();
+  const perksRef = useRef<HTMLDivElement>();
   const [itemClicked, setItemClicked] = useState(false);
   const [selectedItem, setSelectedItem] = useState<SelectedItemType>({
     clicked: itemClicked
   });
 
-  const primaryWeaponData: WeaponType = {
+  // Armas
+  const primaryData: LoadoutItemType = {
     tabIndex: 0,
-    weapon: primaryWeapon,
+    item: primaryWeapon,
     image: imageFromAssets(primaryWeapon.image),
     ref: primaryRef,
   }
-  const secundaryWeaponData: WeaponType = {
+  const secundaryData: LoadoutItemType = {
     tabIndex: 1,
-    weapon: secundaryWeapon,
+    item: secundaryWeapon,
     image: imageFromAssets(secundaryWeapon.image),
     ref: secundaryRef,
+  }
+  // Utilititarias
+  const lethalData = {
+    tabIndex: 3,
+    item: lethal,
+    image: imageFromAssets(lethal.image),
+    ref: lethalRef
+  }
+  const tacticalData = {
+    tabIndex: 4,
+    item: tactical,
+    image: imageFromAssets(tactical.image),
+    ref: tacticalRef
   }
 
   const handleMouseEnter = (ref: RefObject<HTMLDivElement>, loadoutItem: MenuContentType) => {
     const { weapon, perks, utility } = loadoutItem;
-    let menuContent: MenuContentType;
 
     if (weapon && !itemClicked && (ref.current === primaryRef.current || ref.current === secundaryRef.current)) {
-      menuContent = { weapon };
+      handleSideMenuContent({ weapon });
     }
 
-    if (perks && (ref.current)) {
-      menuContent = { perks };
+    if (perks && !itemClicked && (ref.current === perksRef.current)) {
+      handleSideMenuContent({ perks });
     }
 
-    if (utility && (ref.current)) {
-      menuContent = { utility };
-    }
-
-    if (menuContent) {
-      handleSideMenuContent(menuContent);
+    if (utility && !itemClicked && (ref.current === lethalRef.current || ref.current === tacticalRef.current)) {
+      handleSideMenuContent({ utility });
     }
   }
 
@@ -88,7 +102,7 @@ const LoadoutItems: React.FC<IProps> = ({ selected = false, items }) => {
               key={index}
               selected={selected}
               selectedItem={selectedItem}
-              weaponData={isPrimaryType ? primaryWeaponData : secundaryWeaponData}
+              data={isPrimaryType ? primaryData : secundaryData}
               onMouseEnter={(ref, loadoutItem) => handleMouseEnter(ref, loadoutItem)}
               onClick={(itemClicked: ItemClickedType) => handleOnClick(itemClicked)}
             />
@@ -96,7 +110,21 @@ const LoadoutItems: React.FC<IProps> = ({ selected = false, items }) => {
         })
       }
       <Perks selected={selected} data={perks} />
-      <Utilities selected={selected} data={utilities} />
+      {
+        utilities.map((utility, index) => {
+          const isLethalType = utility.type === "Lethal";
+          return (
+            <Utility
+              key={index}
+              selected={selected}
+              selectedItem={selectedItem}
+              data={isLethalType ? lethalData : tacticalData}
+              onMouseEnter={(ref, loadoutItem) => handleMouseEnter(ref, loadoutItem)}
+              onClick={(itemClicked: ItemClickedType) => handleOnClick(itemClicked)}
+            />
+          )
+        })
+      }
     </Container>
   );
 };

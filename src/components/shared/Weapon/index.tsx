@@ -1,4 +1,5 @@
 import React, { RefObject, useContext, useState, useEffect } from 'react';
+
 import { Context, MenuContentType } from '../../ConfigPage/Context';
 import { ItemClickedType, SelectedItemType } from './../../ConfigPage/LoadoutItems';
 
@@ -9,28 +10,22 @@ import {
   AttachSlotsContainer
 } from './styles';
 
-export interface WeaponType {
-  tabIndex: number,
-  weapon: Weapon,
-  image: string,
-  ref: RefObject<HTMLDivElement>,
-}
-
 interface IProps {
-  weaponData: WeaponType;
+  data: LoadoutItemType;
   selected: boolean;
   selectedItem: SelectedItemType;
   onMouseEnter?: (ref: RefObject<HTMLDivElement>, loadoutItem: MenuContentType) => void;
   onClick?: (itemClicked: ItemClickedType) => void;
 }
 
-const Weapon: React.FC<IProps> = ({ weaponData, selected = false, selectedItem, onMouseEnter, onClick }) => {
+const Weapon: React.FC<IProps> = ({ data, selected = false, selectedItem, onMouseEnter, onClick }) => {
   const {
-    weapon,
+    item,
     tabIndex,
     image,
     ref
-  } = weaponData;
+  } = data;
+  const weapon = item as Weapon;
   const { handleSideMenuContent } = useContext(Context);
   const [weaponClicked, setWeaponClicked] = useState(false);
 
@@ -46,7 +41,7 @@ const Weapon: React.FC<IProps> = ({ weaponData, selected = false, selectedItem, 
   }
 
   useEffect(() => {
-    if (selectedItem.clicked && selectedItem.item === weapon) {
+    if (selectedItem.clicked && selectedItem.item === item) {
       setWeaponClicked(true);
     } else {
       setWeaponClicked(false);
