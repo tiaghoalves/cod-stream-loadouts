@@ -15,7 +15,8 @@ interface IProps {
 }
 
 const LoadoutsList: React.FC<IProps> = ({ namesList }) => {
-  const [loadouts, setLoadouts] = useState<string[]>(['Loadout 1']);
+  const defaultName: string = namesList.length === 1 ? namesList[0] : 'Loadout 1';
+  const [loadouts, setLoadouts] = useState<string[]>([defaultName]);
 
   useEffect(() => {
     if (namesList && namesList.length > 0) {

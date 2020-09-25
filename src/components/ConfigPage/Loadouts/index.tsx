@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { match } from 'react-router-dom';
 
 import LoadoutsList from './../LoadoutsList';
 import LoadoutItems from './../LoadoutItems';
 import SideMenu from '../../shared/SideMenu';
 import { RouteMatchType } from './../Routes/Types';
-import { Context, ContentType } from './../Context';
+import { Context, MenuContentType } from './../Context';
 
 import { Container } from './styles';
 
 interface IProps {
-  loadoutsData: LoadoutsData;
+  loadouts?: Loadout[];
   matchLoadouts?: match<RouteMatchType> | null;
   matchSelected?: match<RouteMatchType> | null;
 }
@@ -21,19 +21,19 @@ interface SideMenuData {
   utility?: Utility;
 }
 
-const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected }) => {
+const Loadouts: React.FC<IProps> = ({ loadouts, matchLoadouts, matchSelected }) => {
   const isSelected = (matchSelected && matchSelected.isExact) ? true : false;
   const isLoadouts = (matchLoadouts && matchLoadouts.isExact) ? true : false;
-  const { loadouts } = loadoutsData;
   const loadout: Loadout = loadouts[0];
+  const defaultPrimaryAttachs: Attachment[] = loadout.loadoutItems.weapons[0].attachments;
   const namesList: string[] = loadouts.map((load) => load.name);
-  const defaultAttachments = loadout.loadoutItems.weapons[0].attachments;
+
   const [sideMenuData, setSideMenuData] = useState<SideMenuData>({
-    attachments: defaultAttachments,
+    attachments: defaultPrimaryAttachs,
   });
 
-  const handleSideMenuContent = (content: ContentType) => {
-    const { weapon, perks, utility } = content;
+  const handleSideMenuContent = (content: MenuContentType) => {
+    let { weapon, perks, utility } = content;
     let sideMenuData: SideMenuData;
 
     if (weapon) {
@@ -57,12 +57,12 @@ const Loadouts: React.FC<IProps> = ({ loadoutsData, matchLoadouts, matchSelected
         isLoadouts && (
           <>
             <LoadoutsList namesList={namesList} />
-            <LoadoutItems loadout={loadout} />
+            <LoadoutItems items={loadout.loadoutItems} />
           </>
         ) ||
         isSelected && (
           <Context.Provider value={{ handleSideMenuContent }}>
-            <LoadoutItems loadout={loadout} selected={true} />
+            <LoadoutItems items={loadout.loadoutItems} selected={true} />
             <SideMenu data={sideMenuData} />
           </Context.Provider>
         )

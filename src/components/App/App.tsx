@@ -78,7 +78,7 @@ export default class App extends React.Component<{}, {
 
     componentWillUnmount() {
         if (window.Twitch) {
-            window.Twitch.unlisten('broadcast', () => console.log('successfully unlistened'))
+            window.Twitch.unlisten('broadcast', () => { })
         }
     }
 

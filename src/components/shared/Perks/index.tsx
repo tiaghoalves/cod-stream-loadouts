@@ -34,6 +34,7 @@ const Perks: React.FC<IProps> = ({ selected = false, data }) => {
   return (
     <Perk
       selected={selected}
+      isClicked={false}
       ref={ref}
       onMouseEnter={() => handleOnChange(ref)}
       tabIndex={0}

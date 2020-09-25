@@ -8,13 +8,15 @@ interface IProps {
   loadoutsData: LoadoutsData;
 }
 
-const RoutesContainer: React.FC<IProps> = (props) => {
+const RoutesContainer: React.FC<IProps> = ({ loadoutsData }) => {
   let routeMatchSelected = useRouteMatch<RouteMatchType>('/loadout/:index');
   let routeMatchLoadouts = useRouteMatch<RouteMatchType>('/');
+  const { loadouts } = loadoutsData;
+  const loadoutDefault: Loadout = loadouts[0];
 
   return (
     <Loadouts
-      {...props}
+      loadouts={loadouts}
       matchSelected={routeMatchSelected}
       matchLoadouts={routeMatchLoadouts}
     />

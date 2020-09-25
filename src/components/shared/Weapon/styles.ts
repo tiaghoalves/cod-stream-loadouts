@@ -1,25 +1,25 @@
 import styled from 'styled-components';
-import { ItemSelected, ItemSelectedEffect } from './../styles';
+import { ItemSelected, ItemSelectedEffect } from '../styles';
 
-export const Weapon = styled.div.attrs((props) => {
+export const WeaponContainer = styled.div.attrs((props) => {
   return ({ tabIndex: props.tabIndex })
 }) <{
   selected: boolean,
-  isClicked: boolean
+  weaponClicked: boolean
 }>`
   position: relative;
   width: 300px;
   height: 130px;
   outline: none;
-  cursor: ${props => props.isClicked && props.selected ? ItemSelected.cursor : 'auto'};
+  cursor: ${props => props.weaponClicked && props.selected ? ItemSelected.cursor : 'auto'};
 
-  border-top: ${props => props.isClicked && props.selected ? ItemSelected.borderTop : 'none'};
-  text-shadow: ${props => props.isClicked && props.selected ? ItemSelected.textShadow : 'none'};
-  background-color: ${props => props.isClicked && props.selected ? ItemSelected.backgroundColor : '#1d1d1d'};
+  border-top: ${props => props.weaponClicked && props.selected ? ItemSelected.borderTop : 'none'};
+  text-shadow: ${props => props.weaponClicked && props.selected ? ItemSelected.textShadow : 'none'};
+  background-color: ${props => props.weaponClicked && props.selected ? ItemSelected.backgroundColor : '#1d1d1d'};
   margin: ${props => props.selected ? '5px 0px' : '5px'};
   padding: 3px 10px;
 
-  transition-property: ${props => props.isClicked && props.selected ? ItemSelected.transitionProps : 'text-shadow, background-color, border, color, box-shadow'};
+  transition-property: ${props => props.weaponClicked && props.selected ? ItemSelected.transitionProps : 'text-shadow, background-color, border, color, box-shadow'};
   transition-duration: 0.3s;
   transition-timing-function: ease;
 

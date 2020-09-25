@@ -3,7 +3,10 @@ import { ItemSelected, ItemSelectedEffect } from './../styles';
 
 export const Perk = styled.div.attrs((props) => {
   return ({ tabIndex: props.tabIndex })
-}) <{ selected: boolean }>`
+}) <{
+  selected: boolean,
+  isClicked: boolean
+}>`
   position: relative;
   width: 300px;
   height: 105px;

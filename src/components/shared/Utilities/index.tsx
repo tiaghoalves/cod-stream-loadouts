@@ -1,4 +1,4 @@
-import React, { useRef, RefObject, useContext } from 'react';
+import React, { useRef, RefObject, useContext, useState } from 'react';
 import { Context } from './../../ConfigPage/Context';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
@@ -20,29 +20,47 @@ const Utilities: React.FC<IProps> = ({ selected = false, data }) => {
   const refTactical = useRef<HTMLDivElement>(null);
   const lethal = data.find(util => util.type === "Lethal");
   const tactical = data.find(util => util.type === "Tactical");
+  const [lethalClicked, setLethalClicked] = useState(false);
+  const [tacticalClicked, setTacticalClicked] = useState(false);
 
-  const handleOnChange = (ref: RefObject<HTMLDivElement>, utility: Utility) => {
+  const handleOnMouseEnter = (ref: RefObject<HTMLDivElement>, utility: Utility) => {
     if (selected && ref !== null && ref.current) {
       ref.current.focus();
-
-      handleSideMenuContent({
-        utility: utility
-      });
     }
-  };
+
+    if (!lethalClicked && !tacticalClicked) {
+      handleSideMenuContent({ utility });
+    }
+  }
+
+  const handleOnClick = (isLethal: boolean, utility: Utility) => {
+    if (isLethal) {
+      setLethalClicked(true);
+      setTacticalClicked(false);
+    } else {
+      setLethalClicked(false);
+      setTacticalClicked(true);
+    }
+
+    handleSideMenuContent({ utility });
+  }
 
   return (
     <>
       {
         data.map((utility, index) => {
-          const image = imageFromAssets(utility.type == "Lethal" ? lethal.image : tactical.image);
-          const ref = utility.type == "Lethal" ? refLethal : refTactical;
+          const checkIsLethalType = utility.type === "Lethal";
+          const image = imageFromAssets((checkIsLethalType) ? lethal.image : tactical.image);
+          const ref = (checkIsLethalType) ? refLethal : refTactical;
+
           return (
             <Utility
               key={index}
               selected={selected}
+              isClicked={(checkIsLethalType) ? lethalClicked : tacticalClicked}
               ref={ref}
-              onMouseEnter={() => handleOnChange(ref, utility)}
+              onMouseEnter={() => handleOnMouseEnter(ref, utility)}
+              onClick={() => handleOnClick(checkIsLethalType, utility)}
               tabIndex={index}
             >
               <UtilityDetails>
