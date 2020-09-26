@@ -1,6 +1,6 @@
 import React from 'react';
 
-const imageFromAssets = require.context('./../../../../assets/images', true);
+const imageFromAssets = require.context('./../../../assets/images', true);
 
 import {
   Container,

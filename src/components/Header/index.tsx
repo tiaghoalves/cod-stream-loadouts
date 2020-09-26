@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory, match } from "react-router-dom";
 
-import ArrowLeft from "./../../assets/arrow-left.svg";
+import ArrowLeft from "./../../assets/icons/arrow-left.svg";
 
 import {
   Container,

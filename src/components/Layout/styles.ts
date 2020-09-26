@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import listButttonImg from "../../assets/images/global-nav-bg.png";
+import listButttonImg from "./../../assets/images/global-nav-bg.png";
 
 const ContainerIsConfig = css`
   margin: 0 auto;

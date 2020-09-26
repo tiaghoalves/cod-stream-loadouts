@@ -1,7 +1,7 @@
 import React, { RefObject, useContext, useState, useEffect } from 'react';
 
-import { Context, MenuContentType } from '../../ConfigPage/Context';
-import { ItemClickedType, SelectedItemType } from './../../ConfigPage/LoadoutItems';
+import { Context, MenuContentType } from '../../pages/ConfigPage/Context';
+import { ItemClickedType, SelectedItemType } from './../../pages/ConfigPage/LoadoutItems';
 
 import {
   WeaponContainer,

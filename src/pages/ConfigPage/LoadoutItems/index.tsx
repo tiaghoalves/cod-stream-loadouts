@@ -2,9 +2,9 @@ import React, { useState, RefObject, useContext, useRef } from 'react';
 
 const imageFromAssets = require.context('./../../../assets/images/', true);
 import { Context, MenuContentType } from './../Context';
-import Weapon from '../../shared/Weapon';
-import Perks from './../../shared/Perks';
-import Utility from './../../shared/Utility';
+import Weapon from './../../../components/Weapon';
+import Perks from './../../../components/Perks';
+import Utility from './../../../components/Utility';
 
 import { Container } from './styles';
 

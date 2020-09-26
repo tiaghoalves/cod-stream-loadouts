@@ -3,7 +3,7 @@ import { match } from 'react-router-dom';
 
 import LoadoutsList from './../LoadoutsList';
 import LoadoutItems from './../LoadoutItems';
-import SideMenu from '../../shared/SideMenu';
+import SideMenu from './../../../components/SideMenu';
 import { RouteMatchType } from './../Routes/Types';
 import { Context, MenuContentType } from './../Context';
 

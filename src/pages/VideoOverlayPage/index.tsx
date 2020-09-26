@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
-import Layout from './../Layout';
+import { GlobalStyle } from './../../components/GlobalStyles/GlobalStyles';
+import Layout from './../../components/Layout';
 import Loadouts from './Loadouts';
 import SelectedLoadout from './SelectedLoadout';
 
-import ChevronLeft from "./../../assets/chevron-left.svg";
-import ChevronRight from "./../../assets/chevron-right.svg";
+import ChevronLeft from "./../../assets/icons/chevron-left.svg";
+import ChevronRight from "./../../assets/icons/chevron-right.svg";
 
 import { HideButton } from './styles';
 

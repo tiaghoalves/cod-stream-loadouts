@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { GlobalStyle } from './../GlobalStyles/GlobalStyles';
-import Layout from './../Layout';
+import { GlobalStyle } from './../../components/GlobalStyles/GlobalStyles';
+import Layout from './../../components/Layout';
 import RoutesContainer from './Routes/Container';
 import defaultLoadoutData from './../../assets/json/default_loadout.json';
 

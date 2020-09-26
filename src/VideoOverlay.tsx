@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import VideoOverlay from './components/VideoOverlayPage';
+import VideoOverlay from './pages/VideoOverlayPage';
 
 ReactDOM.render(
   <VideoOverlay />,

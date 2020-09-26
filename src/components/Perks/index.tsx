@@ -1,5 +1,5 @@
 import React, { useRef, RefObject, useContext } from 'react';
-import { Context } from './../../ConfigPage/Context';
+import { Context } from './../../pages/ConfigPage/Context';
 
 import {
   Perk,
@@ -7,7 +7,7 @@ import {
   PerkImage
 } from './styles';
 
-const imageFromAssets = require.context('./../../../assets/images/', true);
+const imageFromAssets = require.context('./../../assets/images/', true);
 
 interface IProps {
   data?: Perk[];

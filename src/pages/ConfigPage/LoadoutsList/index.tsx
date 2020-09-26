@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import PlusIcon from './../../../assets/plus.svg';
+import PlusIcon from './../../../assets/icons/plus.svg';
 
 import {
   Container,
